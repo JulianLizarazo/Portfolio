@@ -9,20 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-   
+    "accept-language": "^3.0.18",
     "autoprefixer": "10.4.14",
+    "i18next": "^22.4.15",
+    "i18next-browser-languagedetector": "^7.0.1",
     "next": "13.4.1",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-i18next": "^12.2.2",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "ts-standard": "^12.0.2",
     "@types/node": "20.1.0",
     "@types/react": "18.2.6",
-    "@types/react-dom": "18.2.4"
+    "@types/react-dom": "18.2.4",
+    "ts-standard": "^12.0.2"
   },
   "ts-standard": {
     "project": "./tsconfig.json"
