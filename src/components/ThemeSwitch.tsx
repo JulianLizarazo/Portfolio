@@ -1,16 +1,13 @@
 import { MouseEventHandler, useState } from "react";
 import LightSelectedSwitch from "./LightSelectedSwitch/LightSelectedSwitch";
 import DarkSelectedSwitch from "./DarkSelectedSwitch/DarkSelectedSwitch";
+import { useTheme } from "@/hooks/useTheme";
 
 const ThemeSwitch = () => {
-  const [theme, setTheme] = useState<boolean>(true);
-
-  const changeTheme = (): MouseEventHandler<HTMLElement> => {
-    setTheme(!theme);
-  };
+  const { theme, changeTheme } = useTheme();
   return (
-    <section onClick={changeTheme}>
-      {theme ? <LightSelectedSwitch /> : <DarkSelectedSwitch />}
+    <section onClick={changeTheme} className="cursor-pointer">
+      {theme === 'light' ? <LightSelectedSwitch /> : <DarkSelectedSwitch />}
     </section>
   );
 };
