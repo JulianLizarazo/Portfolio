@@ -1,7 +1,7 @@
 import "@/app/globals.css";
 import type { NextFont } from "next/dist/compiled/@next/font";
 import { Archivo } from "next/font/google";
-import Header from "@/components/Header";
+import Header from "@/containers/Header";
 
 import { dir } from "i18next";
 

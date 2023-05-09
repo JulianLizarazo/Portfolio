@@ -1,0 +1,53 @@
+.switch {
+  display: flex;
+  position: relative;
+  margin-block-start: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-right: 2px solid black;
+  width: 50px;
+  height: 25px;
+  border-radius: 2px;
+}
+
+.on,
+.off,
+.mountain {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.off {
+  width: 30px;
+  position: absolute;
+  right: 0;
+  background-color: red;
+  border: 1px solid rgba(53, 3, 3, 0.63);
+  border-left: 0.5px solid black;
+  transform: perspective(250px) rotateY(-50deg);
+
+}
+
+.on {
+  width: 23px;
+  height: 93%;
+  margin-block-start: 0.6px;
+  position: absolute;
+  left: 2px;
+  border: 1px solid rgba(80, 4, 4, 0.63);
+  border-right: none;
+  transform: perspective(250px) rotateY(-20deg);
+  background-color: rgba(255, 0, 0, 0.95);
+}
+
+.mountain {
+  width: 15px;
+  position: absolute;
+  right: -4.5px;
+  background-color: red;
+  border: 1px solid rgba(53, 3, 3, 0.63);
+  border-left: 0.5px solid black;
+  height: 101%;
+  transform: perspective(200px) rotateY(70deg);
+}
