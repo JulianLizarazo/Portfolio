@@ -4,7 +4,7 @@ import EEUU from "@/assets/estadosunidos.png";
 import ESPANIA from "@/assets/espana.png";
 
 import { MouseEventHandler, useState } from "react";
-
+import { useTranslation } from "@/app/i18n/client";
 type LanguageProps = {
   lng: string;
 };
@@ -12,6 +12,8 @@ type LanguageProps = {
 export const Languages = ({ lng }: LanguageProps) => {
   const [showCompleteLanguages, setShowCompleteLanguages] =
     useState<boolean>(false);
+  
+    const { t } = useTranslation(lng, "header");
 
   const handleClick = (): MouseEventHandler<HTMLElement> => {
     setShowCompleteLanguages(!showCompleteLanguages);
@@ -23,7 +25,7 @@ export const Languages = ({ lng }: LanguageProps) => {
         <li>
           <Image
             src={lng === "es" ? ESPANIA : EEUU}
-            alt="despues se cambia"
+            alt={lng === "es" ? `${t('colombiaFlag')}` : `${t('eeuuFlag')}`}
             width={24}
             height={24}
           />
@@ -37,7 +39,7 @@ export const Languages = ({ lng }: LanguageProps) => {
                 <li key={l}>
                   <Image
                     src={l === "es" ? ESPANIA : EEUU}
-                    alt="despues se cambia"
+                    alt={lng === "es" ? `${t('eeuuFlag')}` : `${t('colombiaFlag')}`}
                     width={24}
                     height={24}
                   />

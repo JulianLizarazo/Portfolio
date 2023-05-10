@@ -4,7 +4,7 @@ import { Archivo } from "next/font/google";
 import Header from "@/containers/Header";
 
 import { dir } from "i18next";
-import { useTheme } from "@/hooks/useTheme";
+
 
 const languages: string[] = ["en", "es"];
 
