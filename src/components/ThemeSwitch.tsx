@@ -1,4 +1,3 @@
-import { MouseEventHandler, useState } from "react";
 import LightSelectedSwitch from "./LightSelectedSwitch/LightSelectedSwitch";
 import DarkSelectedSwitch from "./DarkSelectedSwitch/DarkSelectedSwitch";
 import { useTheme } from "@/hooks/useTheme";
