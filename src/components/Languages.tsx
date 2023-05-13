@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { languages } from "@/app/i18n/settings";
 import EEUU from "@/assets/estadosunidos.png";
-import ESPANIA from "@/assets/espana.png";
+import COLOMBIA from "@/assets/colombia.png";
 
 import { MouseEventHandler, useEffect, useState } from "react";
 import { useTranslation } from "@/app/i18n/client";
@@ -23,12 +23,15 @@ export const Languages = ({ lng }: LanguageProps) => {
   };
 
   return (
-    <nav>
-      <ul>
+    <nav className="h-full flex items-center cursor-pointer text-light-blue dark:text-dark-white">
+      <ul className="relative">
         {!showCompleteLanguages ? (
-          <li onClick={handleClick}>
+          <li
+            onClick={handleClick}
+            className="flex gap-1.5 border-2 border-solid border-light-brown rounded-md p-1 hover:bg-light-gray dark:border-dark-gray dark:hover:bg-dark-gray"
+          >
             <Image
-              src={lng === "es" ? ESPANIA : EEUU}
+              src={lng === "es" ? COLOMBIA : EEUU}
               alt={lng === "es" ? `${t("colombiaFlag")}` : `${t("eeuuFlag")}`}
               width={24}
               height={24}
@@ -37,9 +40,12 @@ export const Languages = ({ lng }: LanguageProps) => {
           </li>
         ) : (
           <>
-            <li onClick={handleClick}>
+            <li
+              onClick={handleClick}
+              className="flex gap-1.5 border-t-2 border-x-2 border-solid border-light-brown rounded-t-md p-1 pb-2 hover:bg-light-gray dark:border-dark-gray dark:hover:bg-dark-gray"
+            >
               <Image
-                src={lng === "es" ? ESPANIA : EEUU}
+                src={lng === "es" ? COLOMBIA : EEUU}
                 alt={lng === "es" ? `${t("colombiaFlag")}` : `${t("eeuuFlag")}`}
                 width={24}
                 height={24}
@@ -50,10 +56,16 @@ export const Languages = ({ lng }: LanguageProps) => {
               .filter((l) => lng !== l)
               .map((l) => {
                 return (
-                  <li key={l}>
-                    <Link href={lng === "es" ? "/en" : "/es"}>
+                  <li
+                    key={l}
+                    className="absolute top-8 bg-light-white dark:bg-dark-black border-b-2 border-x-2 border-solid border-light-brown rounded-b-md p-1 pe-2 pt-2 hover:bg-light-gray dark:border-dark-gray dark:hover:bg-dark-gray"
+                  >
+                    <Link
+                      href={lng === "es" ? "/en" : "/es"}
+                      className="flex gap-1.5"
+                    >
                       <Image
-                        src={l === "es" ? ESPANIA : EEUU}
+                        src={l === "es" ? COLOMBIA : EEUU}
                         alt={
                           lng === "es"
                             ? `${t("eeuuFlag")}`
