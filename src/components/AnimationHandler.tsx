@@ -19,19 +19,19 @@ type AnimationHandlerProps = {
 const AnimationHandler = ({ t }: AnimationHandlerProps) => {
   const [animations, setAnimations] = useState<boolean>(true);
   return (
-    <section>
-      <h3>{t("animation")}</h3>
+    <section className="text-light-blue dark:text-dark-white h-full flex flex-col items-center justify-evenly">
+      <h3 className="text-sm">{t("animation")}</h3>
       <div
-        className="w-12 h-2.5 rounded-xl relative bg-dark-black cursor-pointer"
+        className="w-10 h-2.5 rounded-xl relative bg-light-brown dark:bg-dark-gray cursor-pointer"
         onClick={() => setAnimations(!animations)}
       >
         <motion.div
-          className="w-6 h-6 rounded-full absolute -bottom-2 flex justify-center items-center bg-dark-red"
+          className="w-5 h-5 rounded-full absolute -bottom-1 flex justify-center items-center bg-light-blue dark:bg-dark-white"
           initial={false}
           animate={!animations ? "left" : "right"}
           variants={variants}
         >
-          <span className="text-[10px] text-center align-middle mt-0.5">
+          <span className="text-[8px] text-center align-middle mt-0.5 text-light-white dark:text-dark-black">
             {animations ? "ON" : "OFF"}
           </span>
         </motion.div>
