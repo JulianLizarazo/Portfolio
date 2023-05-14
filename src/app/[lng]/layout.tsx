@@ -23,12 +23,12 @@ export default function RootLayout({
     lng: string;
   };
 }) {
-
+  
   return (
     <html lang={lng} dir={dir(lng)}>
       <body className={archivo.className}>
         <Header lng={lng} />
-        <main>{children}</main>
+        <main className="w-full h-full bg-light-white dark:bg-dark-black text-light-blue dark:text-dark-white">{children}</main>
       </body>
     </html>
   );
