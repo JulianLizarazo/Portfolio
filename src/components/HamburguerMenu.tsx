@@ -5,18 +5,16 @@ import { TbLetterX } from "react-icons/tb";
 const HamburguerMenu = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   return (
-    <nav>
+    <nav className="w-6 h-6">
       {!showMenu ? (
         <RxHamburgerMenu
-          width={15}
-          height={15}
+          className="w-6 h-6 text-light-blue dark:text-dark-white"
           onClick={() => setShowMenu(!showMenu)}
         />
       ) : (
         <section>
           <TbLetterX
-            width={15}
-            height={15}
+            className="w-6 h-6 text-light-blue dark:text-dark-white"
             onClick={() => setShowMenu(!showMenu)}
           />
         </section>
