@@ -4,11 +4,11 @@ import { useState } from "react";
 
 const variants = {
   left: {
-    transform: "translateX(-5%)",
+    transform: "translateX(0%)",
   },
 
   right: {
-    transform: "translateX(100%)",
+    transform: "translateX(121%)",
   },
 };
 
@@ -22,11 +22,11 @@ const AnimationHandler = ({ t }: AnimationHandlerProps) => {
     <section className="text-light-blue dark:text-dark-white h-full flex flex-col items-center justify-evenly">
       <h3 className="text-sm">{t("animation")}</h3>
       <div
-        className="w-10 h-2.5 rounded-xl relative bg-light-brown dark:bg-dark-gray cursor-pointer"
+        className="w-12 h-6 rounded-xl relative bg-light-brown dark:bg-dark-gray cursor-pointer border-2"
         onClick={() => setAnimations(!animations)}
       >
         <motion.div
-          className="w-5 h-5 rounded-full absolute -bottom-1 flex justify-center items-center bg-light-blue dark:bg-dark-white"
+          className="w-5 h-5 rounded-full absolute bottom-0 flex justify-center items-center bg-light-blue dark:bg-dark-white"
           initial={false}
           animate={!animations ? "left" : "right"}
           variants={variants}
