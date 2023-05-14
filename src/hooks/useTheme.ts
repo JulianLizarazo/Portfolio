@@ -1,4 +1,4 @@
-import { MouseEventHandler, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 type Theme = 'light' | 'dark';
 
@@ -10,7 +10,7 @@ export const useTheme = () => {
       return localData ? JSON.parse(localData) : initialState;
     });
 
-  const changeTheme = (): MouseEventHandler<HTMLElement> => {
+  const changeTheme = (): void => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 

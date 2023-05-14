@@ -18,6 +18,7 @@ type AnimationHandlerProps = {
 
 const AnimationHandler = ({ t }: AnimationHandlerProps) => {
   const [animations, setAnimations] = useState<boolean>(true);
+
   return (
     <section className="text-light-blue dark:text-dark-white h-full flex flex-col items-center justify-evenly">
       <h3 className="text-sm">{t("animation")}</h3>

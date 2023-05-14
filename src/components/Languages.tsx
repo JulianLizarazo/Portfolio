@@ -3,10 +3,9 @@ import { languages } from "@/app/i18n/settings";
 import EEUU from "@/assets/estadosunidos.png";
 import COLOMBIA from "@/assets/colombia.png";
 
-import { MouseEventHandler, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "@/app/i18n/client";
 import Link from "next/link";
-import i18next from "i18next";
 
 type LanguageProps = {
   lng: string;
@@ -16,14 +15,32 @@ export const Languages = ({ lng }: LanguageProps) => {
   const [showCompleteLanguages, setShowCompleteLanguages] =
     useState<boolean>(false);
 
+  const languageRef = useRef<HTMLDivElement | null>(null);
+
   const { t } = useTranslation(lng, "header");
 
-  const handleClick = (): MouseEventHandler<HTMLElement> => {
+  const handleClick = (): void => {
     setShowCompleteLanguages(!showCompleteLanguages);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent): void => {
+      if (
+        languageRef.current &&
+        !languageRef.current.contains(event.target as Node)
+      ) {
+        setShowCompleteLanguages(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <nav className="h-full flex items-center cursor-pointer text-light-blue dark:text-dark-white">
+    <nav ref={languageRef} className="h-full flex items-center cursor-pointer text-light-blue dark:text-dark-white">
       <ul className="relative">
         {!showCompleteLanguages ? (
           <li
