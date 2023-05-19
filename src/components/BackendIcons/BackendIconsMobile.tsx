@@ -54,7 +54,7 @@ export const BackendIconsMobile = () => {
       initial={false}
       animate={show ? "show" : "hidden"}
       variants={variants}
-      className="absolute w-full h-1/5 bottom-0"
+      className="absolute w-full h-1/5 bottom-0 max-w-md"
     >
       <FaNodeJs className="absolute w-8 h-8 bottom-44 left-20 opacity-60" />
       <SiExpress className="absolute w-8 h-8 bottom-28 left-8 opacity-60" />

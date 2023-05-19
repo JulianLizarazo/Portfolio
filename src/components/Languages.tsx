@@ -40,7 +40,7 @@ export const Languages = ({ lng }: LanguageProps) => {
   }, []);
 
   return (
-    <nav ref={languageRef} className="h-full flex items-center cursor-pointer text-light-blue dark:text-dark-white">
+    <nav ref={languageRef} className="h-full flex items-center cursor-pointer text-light-blue dark:text-dark-white z-30">
       <ul className="relative">
         {!showCompleteLanguages ? (
           <li

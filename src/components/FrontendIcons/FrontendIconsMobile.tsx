@@ -53,7 +53,7 @@ const FrontendIconsMobile = () => {
       initial={false}
       animate={show ? "show" : "hidden"}
       variants={variants}
-      className="absolute w-full h-1/5 top-0"
+      className="absolute w-full h-1/5 top-0 max-w-md"
     >
       <AiFillHtml5 className="absolute left-24 top-14 w-8 h-8 opacity-60" />
 

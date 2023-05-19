@@ -11,7 +11,6 @@ import BackendIconsMobile from "@/components/BackendIcons/BackendIconsMobile";
 import BackendIconsDesktop from "@/components/BackendIcons/BackendIconsDesktop";
 
 export const Presentation = () => {
-  const [typed, setTyped] = useState<Typed | null>(null);
   const { width } = useWindowSize();
   const el = useRef(null);
   const { t } = useTranslation(i18next.language, "presentation");
@@ -23,7 +22,6 @@ export const Presentation = () => {
       loop: true,
       backDelay: 1500,
     });
-    setTyped(typed);
     return () => {
       typed.destroy();
     };
@@ -33,7 +31,7 @@ export const Presentation = () => {
 
 
   return (
-    <section className="w-full h-[91.6vh] flex flex-col justify-center relative">
+    <section className="w-full h-[91.6vh] flex flex-col justify-center items-center relative">
       {width < 1023 ? <FrontendIconsMobile /> : <FrontendIconsDesktop />}
       <div className="text-center align-middle">
         <h2 className="text-xl">JULIAN PINILLA</h2>

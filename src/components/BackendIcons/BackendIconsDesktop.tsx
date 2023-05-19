@@ -2,7 +2,7 @@
 
 const BackendIconsDesktop = () => {
     return(
-        <div>ola</div>
+        <div className="">ola</div>
     )
 };
 
