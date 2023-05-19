@@ -29,9 +29,6 @@ export const Presentation = () => {
     };
   }, []);
 
-  useEffect(() => {
-    console.log("typed",typed?.arrayPos);
-  })
 
 
 
