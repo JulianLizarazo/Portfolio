@@ -9,23 +9,27 @@ import FrontendIconsMobile from "@/components/FrontendIcons/FrontendIconsMobile"
 import BackendIconsMobile from "@/components/BackendIcons/BackendIconsMobile";
 import BackendIconsDesktop from "@/components/BackendIcons/BackendIconsDesktop";
 import { useTranslations } from "next-intl";
+import useAnimations from "@/hooks/useAnimations";
 
 export const Presentation = () => {
   const { width } = useWindowSize();
+  const { animations } = useAnimations();
   const el = useRef(null);
   const t = useTranslations("presentation");
 
   useEffect(() => {
-    const typed = new Typed(el.current, {
-      strings: [t("frontend"), t("backend"), t("fullstack")],
-      typeSpeed: 100,
-      loop: true,
-      backDelay: 1500,
-    });
-    return () => {
-      typed.destroy();
-    };
-  }, []);
+    if (animations === "on") {
+      const typed = new Typed(el.current, {
+        strings: [t("frontend"), t("backend"), t("fullstack")],
+        typeSpeed: 100,
+        loop: true,
+        backDelay: 1500,
+      });
+      return () => {
+        typed.destroy();
+      };
+    }
+  }, [animations]);
 
   return (
     <section className="w-full h-[91.6vh] flex flex-col justify-center items-center relative">
@@ -33,7 +37,11 @@ export const Presentation = () => {
       <div className="text-center align-middle">
         <h2 className="text-xl">JULIAN PINILLA</h2>
         <div className="text-xl">
-          <span ref={el} />
+          {animations === "on" ? (
+            <span ref={el} />
+          ) : (
+            <span>{t("fullstack")}</span>
+          )}
         </div>
       </div>
       {width < 1023 ? <BackendIconsMobile /> : <BackendIconsDesktop />}
