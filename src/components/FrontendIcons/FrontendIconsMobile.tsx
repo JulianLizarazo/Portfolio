@@ -1,9 +1,12 @@
+"use client"
 import { AiFillHtml5 } from "react-icons/ai";
 import { DiCss3 } from "react-icons/di";
 import { SiJavascript, SiTailwindcss, SiTypescript } from "react-icons/si";
 import { FaReact, FaSass } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import  useAnimations  from "@/hooks/useAnimations";
+
 
 const variants = {
   show: {
@@ -17,35 +20,40 @@ const variants = {
 let counter: number = 1;
 const FrontendIconsMobile = () => {
   const [show, setShow] = useState<boolean>(true);
+  const { animations } = useAnimations();
 
   useEffect(() => {
+    
+    if (animations === "on") {
+      const animationTime = (time: number): void => {
+        setTimeout(() => {
+          setShow(!show);
+        }, time);
+      };
 
-    const animationTime = (time: number): void => {
-      setTimeout(() => {
-        setShow(!show);
-      }, time);
-    };
+      if (counter > 3) {
+        counter = 2;
+      }
 
-    if (counter > 3) {
-      counter = 2;
-    }
+      switch (counter) {
+        case 1:
+          counter++;
 
-    switch (counter) {
-      case 1:
-        counter++;
-       
-        animationTime(5000);
-        break;
-      case 2:
-        counter++;
-      
-        animationTime(2800);
-        break;
-      case 3:
-        counter++;
-       
-        animationTime(7800);
-        break;
+          animationTime(5000);
+          break;
+        case 2:
+          counter++;
+
+          animationTime(2800);
+          break;
+        case 3:
+          counter++;
+
+          animationTime(7800);
+          break;
+      } 
+    } else {
+      setShow(true);
     }
   }, [show]);
   return (

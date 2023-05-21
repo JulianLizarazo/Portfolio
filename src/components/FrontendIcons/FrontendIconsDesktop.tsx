@@ -1,3 +1,4 @@
+"use client"
 import { AiFillHtml5 } from "react-icons/ai";
 import { DiCss3 } from "react-icons/di";
 import { SiJavascript, SiTailwindcss, SiTypescript } from "react-icons/si";

@@ -1,3 +1,4 @@
+"use client"
 import style from "./DarkSelectedSwitch.module.css";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 const DarkSelectedSwitch = () => {

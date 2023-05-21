@@ -1,6 +1,7 @@
+"use client"
 import type { TFunction } from "i18next";
 import { motion } from "framer-motion";
-import { useAnimations } from "@/hooks/useAnimations";
+import  useAnimations  from "@/hooks/useAnimations";
 
 const variants = {
   left: {
@@ -32,7 +33,7 @@ const AnimationHandler = ({ t }: AnimationHandlerProps) => {
           variants={variants}
         >
           <span className="text-[8px] text-center align-middle mt-0.5 text-light-white dark:text-dark-black">
-            {animations.toUpperCase()}
+            {animations && animations.toUpperCase()}
           </span>
         </motion.div>
       </div>

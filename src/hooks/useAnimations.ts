@@ -1,22 +1,26 @@
-import { useEffect, useState } from "react";
+"use client"
+import { useEffect, useState, useLayoutEffect } from "react";
 
 type Animations = "on" | "off";
 
 const initialState: Animations = "on";
 
-export const useAnimations = () => {
-  const [animations, setAnimations] = useState<Animations>(initialState);
+const useAnimations = () => {
+  const [animations, setAnimations] = useState<Animations | "">("");
+
+  useLayoutEffect(() => {
+    if(typeof window !== 'undefined'){
+
+      const localData = JSON?.parse(
+        localStorage.getItem("animations") as string
+    ) ?? initialState;
+    setAnimations(localData);
+  }
+  }, []);
 
   const changeAnimations = (): void => {
     setAnimations(animations === "on" ? "off" : "on");
   };
-
-  useEffect(() => {
-    const localData: Animations = JSON.parse(
-      localStorage.getItem("animations") as Animations
-    );
-    setAnimations(localData);
-  }, []);
 
   useEffect(() => {
     localStorage.setItem("animations", JSON.stringify(animations));
@@ -27,3 +31,5 @@ export const useAnimations = () => {
     changeAnimations,
   };
 };
+
+export default useAnimations;

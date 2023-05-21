@@ -1,3 +1,4 @@
+"use client"
 import "@/app/globals.css";
 import type { NextFont } from "next/dist/compiled/@next/font";
 import { Archivo } from "next/font/google";

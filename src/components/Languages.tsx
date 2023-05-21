@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import { languages } from "@/app/i18n/settings";
 import EEUU from "@/assets/estadosunidos.png";

@@ -1,7 +1,6 @@
-"use client";
-
+"use client"
 import { useTranslation } from "@/app/i18n/client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import i18next from "i18next";
 import FrontendIconsDesktop from "@/components/FrontendIcons/FrontendIconsDesktop";
