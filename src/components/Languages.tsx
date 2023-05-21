@@ -1,11 +1,10 @@
-"use client"
+"use client";
 import Image from "next/image";
-import { languages } from "@/app/i18n/settings";
 import EEUU from "@/assets/estadosunidos.png";
 import COLOMBIA from "@/assets/colombia.png";
 
 import { useEffect, useRef, useState } from "react";
-import { useTranslation } from "@/app/i18n/client";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 type LanguageProps = {
@@ -18,7 +17,7 @@ export const Languages = ({ lng }: LanguageProps) => {
 
   const languageRef = useRef<HTMLDivElement | null>(null);
 
-  const { t } = useTranslation(lng, "header");
+  const t = useTranslations("header");
 
   const handleClick = (): void => {
     setShowCompleteLanguages(!showCompleteLanguages);
@@ -39,9 +38,12 @@ export const Languages = ({ lng }: LanguageProps) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
+  console.log(lng)
   return (
-    <nav ref={languageRef} className="h-full flex items-center cursor-pointer text-light-blue dark:text-dark-white z-30">
+    <nav
+      ref={languageRef}
+      className="h-full flex items-center cursor-pointer text-light-blue dark:text-dark-white z-30"
+    >
       <ul className="relative">
         {!showCompleteLanguages ? (
           <li
@@ -70,33 +72,22 @@ export const Languages = ({ lng }: LanguageProps) => {
               />
               <span>{lng.toUpperCase()}</span>
             </li>
-            {languages
-              .filter((l) => lng !== l)
-              .map((l) => {
-                return (
-                  <li
-                    key={l}
-                    className="absolute top-8 bg-light-white dark:bg-dark-black border-b-2 border-x-2 border-solid border-light-brown rounded-b-md p-1 pe-2 pt-2 hover:bg-light-gray dark:border-dark-gray dark:hover:bg-dark-gray"
-                  >
-                    <Link
-                      href={lng === "es" ? "/en" : "/es"}
-                      className="flex gap-1.5"
-                    >
-                      <Image
-                        src={l === "es" ? COLOMBIA : EEUU}
-                        alt={
-                          lng === "es"
-                            ? `${t("eeuuFlag")}`
-                            : `${t("colombiaFlag")}`
-                        }
-                        width={24}
-                        height={24}
-                      />
-                      <span> {l.toUpperCase()}</span>
-                    </Link>
-                  </li>
-                );
-              })}
+            <li className="absolute top-8 bg-light-white dark:bg-dark-black border-b-2 border-x-2 border-solid border-light-brown rounded-b-md p-1 pe-2 pt-2 hover:bg-light-gray dark:border-dark-gray dark:hover:bg-dark-gray">
+              <Link
+                href={lng === "es" ? "/en" : "/es"}
+                className="flex gap-1.5"
+              >
+                <Image
+                  src={lng === "es" ?  EEUU : COLOMBIA }
+                  alt={
+                    lng === "es" ? `${t("eeuuFlag")}` : `${t("colombiaFlag")}`
+                  }
+                  width={24}
+                  height={24}
+                />
+                <span> {lng === "es" ? "EN" : "ES"}</span>
+              </Link>
+            </li>
           </>
         )}
       </ul>

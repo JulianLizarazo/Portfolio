@@ -1,0 +1,12 @@
+{
+    "header": {
+        "colombiaFlag": "Bandera de Colombia",
+        "eeuuFlag": "Bandera de Estados Unidos",
+        "animations": "Animaciones" 
+    },
+    "presentation": {
+        "frontend": "Desarrollador Frontend",
+        "backend": "Desarrollador Backend",
+        "fullstack": "Desarrollador Fullstack"
+    }
+}

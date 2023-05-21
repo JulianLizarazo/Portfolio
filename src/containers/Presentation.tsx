@@ -1,18 +1,19 @@
-"use client"
-import { useTranslation } from "@/app/i18n/client";
+"use client";
+
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import i18next from "i18next";
+
 import FrontendIconsDesktop from "@/components/FrontendIcons/FrontendIconsDesktop";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import FrontendIconsMobile from "@/components/FrontendIcons/FrontendIconsMobile";
 import BackendIconsMobile from "@/components/BackendIcons/BackendIconsMobile";
 import BackendIconsDesktop from "@/components/BackendIcons/BackendIconsDesktop";
+import { useTranslations } from "next-intl";
 
 export const Presentation = () => {
   const { width } = useWindowSize();
   const el = useRef(null);
-  const { t } = useTranslation(i18next.language, "presentation");
+  const t = useTranslations("presentation");
 
   useEffect(() => {
     const typed = new Typed(el.current, {
@@ -26,9 +27,6 @@ export const Presentation = () => {
     };
   }, []);
 
-
-
-
   return (
     <section className="w-full h-[91.6vh] flex flex-col justify-center items-center relative">
       {width < 1023 ? <FrontendIconsMobile /> : <FrontendIconsDesktop />}
@@ -38,7 +36,7 @@ export const Presentation = () => {
           <span ref={el} />
         </div>
       </div>
-      {width < 1023 ? <BackendIconsMobile/> : <BackendIconsDesktop/>}
+      {width < 1023 ? <BackendIconsMobile /> : <BackendIconsDesktop />}
     </section>
   );
 };

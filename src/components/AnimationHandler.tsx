@@ -1,7 +1,7 @@
 "use client"
-import type { TFunction } from "i18next";
 import { motion } from "framer-motion";
 import  useAnimations  from "@/hooks/useAnimations";
+import { useTranslations } from "next-intl";
 
 const variants = {
   left: {
@@ -13,15 +13,14 @@ const variants = {
   },
 };
 
-type AnimationHandlerProps = {
-  t: TFunction<string, undefined, string>;
-};
 
-const AnimationHandler = ({ t }: AnimationHandlerProps) => {
+
+const AnimationHandler = () => {
+  const t = useTranslations("header");
   const { animations , changeAnimations } = useAnimations();
   return (
     <section className="text-light-blue dark:text-dark-white h-full flex flex-col items-center justify-evenly">
-      <h3 className="text-sm">{t("animation")}</h3>
+      <h3 className="text-sm">{t("animations")}</h3>
       <div
         className="w-12 h-6 rounded-xl relative bg-light-brown dark:bg-dark-gray cursor-pointer border-2"
         onClick={changeAnimations}
