@@ -38,7 +38,7 @@ export const Languages = ({ lng }: LanguageProps) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  console.log(lng)
+
   return (
     <nav
       ref={languageRef}

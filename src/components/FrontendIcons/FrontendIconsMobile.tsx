@@ -52,10 +52,8 @@ const FrontendIconsMobile = () => {
           animationTime(7800);
           break;
       } 
-    } else {
-      setShow(true);
-    }
-  }, [show]);
+    } 
+  }, [show, animations]);
   return (
     <motion.section
       initial={false}

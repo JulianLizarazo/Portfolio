@@ -34,8 +34,6 @@ export const BackendIconsMobile = () => {
     }, time);
   };
   useEffect(() => {
-    console.log(show, animations);
-
     if (animations === "on") {
       if (counter > 2) {
         counter = 1;
@@ -53,12 +51,8 @@ export const BackendIconsMobile = () => {
           animationTime(5800);
           break;
       }
-    } else if (counter === 1 && animations === ("on" as string)) {
-      setShow(false);
-    } else {
-      setShow(true);
     }
-  }, [show]);
+  }, [show, animations]);
   return (
     <motion.section
       initial={false}
