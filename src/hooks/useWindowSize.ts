@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react";
+import { useEffect, useState, useLayoutEffect } from "react";
 
 export const useWindowSize = () => {
   const [width, setWidth] = useState<number>(0);
@@ -7,6 +7,10 @@ export const useWindowSize = () => {
   const changeWidth = (): void => {
     setWidth(window.innerWidth);
   };
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, [])
 
   useEffect(() => {
     window.addEventListener("resize", changeWidth);

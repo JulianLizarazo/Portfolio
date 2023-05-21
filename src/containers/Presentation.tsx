@@ -35,8 +35,8 @@ export const Presentation = () => {
     <section className="w-full h-[91.6vh] flex flex-col justify-center items-center relative">
       {width < 1023 ? <FrontendIconsMobile /> : <FrontendIconsDesktop />}
       <div className="text-center align-middle">
-        <h2 className="text-xl">JULIAN PINILLA</h2>
-        <div className="text-xl">
+        <h2 className="text-xl md:text-4xl">JULIAN PINILLA</h2>
+        <div className="text-xl md:text-3xl">
           {animations === "on" ? (
             <span ref={el} />
           ) : (
