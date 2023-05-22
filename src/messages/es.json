@@ -11,5 +11,8 @@
     },
     "about-me": {
         "text": "Me llamo Julian Pinilla, actualmente estoy terminando la carrera de Ingeniería de Sistemas en la Universidad de Cundinamarca en Colombia. Me desempeño como desarrollador fullstack con especialización en el frontend."
+    },
+    "skills": {
+        "stack": "Habilidades principales" 
     }
 }

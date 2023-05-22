@@ -1,23 +1,24 @@
 "use client"
-import { useEffect, useState } from "react";
+import { useEffect, useState, useLayoutEffect } from "react";
 
 type Theme = "light" | "dark";
 
 const initialState: Theme = "light";
 
 export const useTheme = () => {
-  const [theme, setTheme] = useState<Theme>(initialState);
+  const [theme, setTheme] = useState<Theme | "">("");
 
   const changeTheme = (): void => {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
-  useEffect(() => {
-    const localData: Theme = JSON.parse(localStorage.getItem("theme") as Theme);
+  useLayoutEffect(() => {
+    const localData: Theme = JSON.parse(localStorage.getItem("theme") as Theme) ?? initialState;
     setTheme(localData);
   }, []);
 
   useEffect(() => {
+    
     const className: string = "dark";
     const bodyClasses: DOMTokenList = window.document.body.classList;
 

@@ -9,7 +9,7 @@ import {
   MouseParallaxContainer,
   MouseParallaxChild,
 } from "react-parallax-mouse";
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import useAnimations from "@/hooks/useAnimations";
 
 const variants = {
@@ -25,12 +25,13 @@ let counter = 1;
 const FrontendIconsDesktop = () => {
   const [show, setShow] = useState<boolean>(true);
   const { animations } = useAnimations();
+  
 
   useEffect(() => {
     
     if (animations === "on") {
       const animationTime = (time: number): void => {
-        setTimeout(() => {
+       setTimeout(() => {
           setShow(!show);
         }, time);
       };
@@ -57,6 +58,8 @@ const FrontendIconsDesktop = () => {
           break;
       } 
     } 
+
+   
   }, [show, animations]);
 
   return (

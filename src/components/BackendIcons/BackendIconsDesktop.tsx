@@ -15,7 +15,7 @@ import {
 } from "react-parallax-mouse";
 import { useState, useEffect } from "react";
 import useAnimations from "@/hooks/useAnimations";
-import { useWindowSize } from "@/hooks/useWindowSize";
+
 
 const variants = {
   show: {
@@ -30,8 +30,7 @@ let counter = 1;
 const BackendIconsDesktop = () => {
   const [show, setShow] = useState<boolean>(false);
   const { animations } = useAnimations();
- 
-  console.log(animations)
+  
 
   const animationTime = (time: number): void => {
     setTimeout(() => {
