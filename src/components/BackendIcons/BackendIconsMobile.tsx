@@ -1,5 +1,4 @@
 "use client";
-import { useState, useEffect } from "react";
 import { FaNodeJs } from "react-icons/fa";
 import {
   SiExpress,
@@ -22,41 +21,18 @@ const variants = {
   },
 };
 
-let counter = 1;
 
-export const BackendIconsMobile = () => {
+type BackendIconsMobileProps = {
+  text: number;
+};
+
+export const BackendIconsMobile = ({ text }: BackendIconsMobileProps) => {
   const { animations } = useAnimations();
-  const [show, setShow] = useState<boolean>(false);
 
-  const animationTime = (time: number): void => {
-    setTimeout(() => {
-      setShow(!show);
-    }, time);
-  };
-  useEffect(() => {
-    if (animations === "on") {
-      if (counter > 2) {
-        counter = 1;
-      }
-
-      switch (counter) {
-        case 1:
-          counter++;
-
-          animationTime(5000);
-          break;
-        case 2:
-          counter++;
-
-          animationTime(5800);
-          break;
-      }
-    }
-  }, [show, animations]);
   return (
     <motion.section
       initial={false}
-      animate={show ? "show" : "hidden"}
+      animate={text === 1 || text === 2 ? "show" : "hidden"}
       variants={animations === "on" ? variants : undefined}
       className="absolute w-full h-1/5 bottom-0 max-w-md"
     >

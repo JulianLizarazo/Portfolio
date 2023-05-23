@@ -13,7 +13,6 @@ import {
   MouseParallaxContainer,
   MouseParallaxChild,
 } from "react-parallax-mouse";
-import { useState, useEffect } from "react";
 import useAnimations from "@/hooks/useAnimations";
 
 
@@ -26,41 +25,17 @@ const variants = {
     opacity: 0,
   },
 };
-let counter = 1;
-const BackendIconsDesktop = () => {
-  const [show, setShow] = useState<boolean>(false);
+
+type BackendIconsDesktopProps = {
+  text: number
+}
+
+const BackendIconsDesktop = ({text}: BackendIconsDesktopProps) => {
   const { animations } = useAnimations();
-  
-
-  const animationTime = (time: number): void => {
-    setTimeout(() => {
-      setShow(!show);
-    }, time);
-  };
-  useEffect(() => {
-    if (animations === "on") {
-      if (counter > 2) {
-        counter = 1;
-      }
-
-      switch (counter) {
-        case 1:
-          counter++;
-
-          animationTime(5000);
-          break;
-        case 2:
-          counter++;
-
-          animationTime(5800);
-          break;
-      }
-    }
-  }, [show, animations]);
   return (
     <motion.section
       initial={false}
-      animate={show ? "show" : "hidden"}
+      animate={text === 1 || text === 2 ? "show" : "hidden"}
       variants={animations === "on" ? variants : undefined}
       className="absolute w-1/2 h-full top-0 right-0 mr-[10%]"
     >

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 
 import FrontendIconsDesktop from "@/components/FrontendIcons/FrontendIconsDesktop";
@@ -12,19 +12,24 @@ import { useTranslations } from "next-intl";
 import useAnimations from "@/hooks/useAnimations";
 
 export const Presentation = () => {
+  const [positionString, setPositionString] = useState<number>(0);
   const { width } = useWindowSize();
   const { animations } = useAnimations();
-  const el = useRef(null);
+  const el = useRef<HTMLDivElement | null>(null);
   const t = useTranslations("presentation");
 
   useEffect(() => {
     if (animations === "on") {
       const typed = new Typed(el.current, {
         strings: [t("frontend"), t("backend"), t("fullstack")],
-        typeSpeed: 100,
+        typeSpeed: 50,
         loop: true,
-        backDelay: 1500,
+        backDelay: 2500,
+        onStringTyped: () => {
+          setPositionString(typed.arrayPos);
+        },
       });
+      
       return () => {
         typed.destroy();
       };
@@ -33,7 +38,7 @@ export const Presentation = () => {
 
   return (
     <section className="w-full h-[91.6vh] flex flex-col justify-center items-center relative">
-      {width < 1023 ? <FrontendIconsMobile /> : <FrontendIconsDesktop />}
+      {width < 1023 ? <FrontendIconsMobile text={positionString}/> : <FrontendIconsDesktop text={positionString} />}
       <div className="text-center align-middle">
         <h2 className="text-xl md:text-4xl">JULIAN PINILLA</h2>
         <div className="text-xl md:text-3xl">
@@ -44,7 +49,7 @@ export const Presentation = () => {
           )}
         </div>
       </div>
-      {width < 1023 ? <BackendIconsMobile /> : <BackendIconsDesktop />}
+      {width < 1023 ? <BackendIconsMobile text={positionString} /> : <BackendIconsDesktop text={positionString}  />}
     </section>
   );
 };

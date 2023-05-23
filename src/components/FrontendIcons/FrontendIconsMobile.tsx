@@ -1,12 +1,9 @@
-"use client"
+"use client";
 import { AiFillHtml5 } from "react-icons/ai";
 import { DiCss3 } from "react-icons/di";
 import { SiJavascript, SiTailwindcss, SiTypescript } from "react-icons/si";
 import { FaReact, FaSass } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import  useAnimations  from "@/hooks/useAnimations";
-
 
 const variants = {
   show: {
@@ -17,47 +14,14 @@ const variants = {
     opacity: 0,
   },
 };
-let counter: number = 1;
-const FrontendIconsMobile = () => {
-  const [show, setShow] = useState<boolean>(true);
-  const { animations } = useAnimations();
-
-  useEffect(() => {
-    
-    if (animations === "on") {
-      const animationTime = (time: number): void => {
-        setTimeout(() => {
-          setShow(!show);
-        }, time);
-      };
-
-      if (counter > 3) {
-        counter = 2;
-      }
-
-      switch (counter) {
-        case 1:
-          counter++;
-
-          animationTime(5000);
-          break;
-        case 2:
-          counter++;
-
-          animationTime(2800);
-          break;
-        case 3:
-          counter++;
-
-          animationTime(7800);
-          break;
-      } 
-    } 
-  }, [show, animations]);
+type FrontendIconsMobileProps = {
+  text: number;
+};
+const FrontendIconsMobile = ({ text }: FrontendIconsMobileProps) => {
   return (
     <motion.section
       initial={false}
-      animate={show ? "show" : "hidden"}
+      animate={text === 0 || text === 2 ? "show" : "hidden"}
       variants={variants}
       className="absolute w-full h-1/5 top-0 max-w-md"
     >

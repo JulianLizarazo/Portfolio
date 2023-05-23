@@ -17,7 +17,7 @@ const hoverDark = {
 
 const ContactButtons = () => {
   const { theme } = useTheme();
-  console.log(theme);
+  
   return (
     <div className="w-full h-[8rem] flex items-center justify-around">
       <motion.a
