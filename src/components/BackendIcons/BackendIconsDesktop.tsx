@@ -13,7 +13,8 @@ import {
   MouseParallaxContainer,
   MouseParallaxChild,
 } from "react-parallax-mouse";
-import useAnimations from "@/hooks/useAnimations";
+import { useAnimationContext } from "@/context/animations";
+
 
 
 const variants = {
@@ -31,12 +32,11 @@ type BackendIconsDesktopProps = {
 }
 
 const BackendIconsDesktop = ({text}: BackendIconsDesktopProps) => {
-  const { animations } = useAnimations();
+  const { animations } = useAnimationContext();
   return (
     <motion.section
-      initial={false}
-      animate={text === 1 || text === 2 ? "show" : "hidden"}
-      variants={animations === "on" ? variants : undefined}
+      animate={(animations === "off" || text === 1 || text === 2) ? "show" : "hidden"}
+      variants={variants}
       className="absolute w-1/2 h-full top-0 right-0 mr-[10%]"
     >
       <MouseParallaxContainer className="h-full" globalFactorX={0.2} globalFactorY={0.2}>

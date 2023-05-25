@@ -9,7 +9,7 @@ import {
 import { TbSql } from "react-icons/tb";
 import { BsFillTerminalFill } from "react-icons/bs";
 import { motion } from "framer-motion";
-import useAnimations from "@/hooks/useAnimations";
+import { useAnimationContext } from "@/context/animations";
 
 const variants = {
   show: {
@@ -21,19 +21,19 @@ const variants = {
   },
 };
 
-
 type BackendIconsMobileProps = {
   text: number;
 };
 
 export const BackendIconsMobile = ({ text }: BackendIconsMobileProps) => {
-  const { animations } = useAnimations();
+  const { animations } = useAnimationContext();
 
   return (
     <motion.section
-      initial={false}
-      animate={text === 1 || text === 2 ? "show" : "hidden"}
-      variants={animations === "on" ? variants : undefined}
+      animate={
+        animations === "off" || text === 1 || text === 2 ? "show" : "hidden"
+      }
+      variants={variants}
       className="absolute w-full h-1/5 bottom-0 max-w-md"
     >
       <FaNodeJs className="absolute w-8 h-8 bottom-44 left-20 opacity-60" />

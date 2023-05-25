@@ -4,6 +4,7 @@ import { DiCss3 } from "react-icons/di";
 import { SiJavascript, SiTailwindcss, SiTypescript } from "react-icons/si";
 import { FaReact, FaSass } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useAnimationContext } from "@/context/animations";
 
 const variants = {
   show: {
@@ -18,10 +19,11 @@ type FrontendIconsMobileProps = {
   text: number;
 };
 const FrontendIconsMobile = ({ text }: FrontendIconsMobileProps) => {
+  const { animations } = useAnimationContext();
   return (
     <motion.section
       initial={false}
-      animate={text === 0 || text === 2 ? "show" : "hidden"}
+      animate={animations === "off" || text === 0 || text === 2 ? "show" : "hidden"}
       variants={variants}
       className="absolute w-full h-1/5 top-0 max-w-md"
     >

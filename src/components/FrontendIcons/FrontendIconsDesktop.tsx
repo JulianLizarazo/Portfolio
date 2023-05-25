@@ -9,7 +9,7 @@ import {
   MouseParallaxContainer,
   MouseParallaxChild,
 } from "react-parallax-mouse";
-
+import { useAnimationContext } from "@/context/animations";
 
 const variants = {
   show: {
@@ -22,16 +22,15 @@ const variants = {
 };
 
 type FrontendIconsDesktopProps = {
-  text: number
-}
+  text: number;
+};
 
 const FrontendIconsDesktop = ({ text }: FrontendIconsDesktopProps) => {
-
-
+  const { animations } = useAnimationContext();
   return (
     <motion.section
       initial={false}
-      animate={text === 0 || text === 2 ? "show" : "hidden"}
+      animate={ animations === "off" || text === 0 || text === 2 ? "show" : "hidden"}
       variants={variants}
       className="absolute w-1/2 h-full top-0 left-0 ml-[10%]"
     >

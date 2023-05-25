@@ -1,7 +1,7 @@
 "use client"
 import { motion } from "framer-motion";
-import  useAnimations  from "@/hooks/useAnimations";
 import { useTranslations } from "next-intl";
+import { useAnimationContext } from "@/context/animations";
 
 const variants = {
   left: {
@@ -17,7 +17,8 @@ const variants = {
 
 const AnimationHandler = () => {
   const t = useTranslations("header");
-  const { animations , changeAnimations } = useAnimations();
+  const { animations , changeAnimations } = useAnimationContext();
+
   return (
     <section className="text-light-blue dark:text-dark-white h-full flex flex-col items-center justify-evenly">
       <h3 className="text-sm">{t("animations")}</h3>

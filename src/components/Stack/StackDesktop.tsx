@@ -1,9 +1,12 @@
+"use client";
 import { SiPostgresql, SiExpress, SiTypescript } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { DiNodejs } from "react-icons/di";
 import { TbBrandNextjs } from "react-icons/tb";
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+
+import { useAnimationContext } from "@/context/animations";
 
 const animationProps = {
   MARGIN_START: "500%",
@@ -12,8 +15,11 @@ const animationProps = {
 };
 
 const StackDesktop = () => {
+
   const [showText, setShowText] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement | null>(null);
+
+  const { animations } = useAnimationContext();
   const isInView = useInView(ref, {
     margin: "-160px",
     once: true,
@@ -23,6 +29,7 @@ const StackDesktop = () => {
     setShowText(true);
   };
 
+
   return (
     <section
       ref={ref}
@@ -30,16 +37,21 @@ const StackDesktop = () => {
     >
       <div className="h-36  flex flex-col items-center justify-around">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={showText && { opacity: 1 }}
+          initial={animations === "on" && { opacity: 0 }}
+          animate={animations === "on" && showText && { opacity: 1 }}
           transition={{ duration: animationProps.DURATION }}
         >
           <SiPostgresql className="w-[70px] h-[70px]" />
         </motion.div>
         <div className="flex items-center text-2xl w-full">
           <motion.span
-            initial={{ marginInlineStart: animationProps.MARGIN_START }}
+            initial={
+              animations === "on" && {
+                marginInlineStart: animationProps.MARGIN_START,
+              }
+            }
             animate={
+              animations === "on" &&
               isInView && { marginInlineStart: animationProps.MARGIN_END }
             }
             transition={{ duration: animationProps.DURATION }}
@@ -48,8 +60,8 @@ const StackDesktop = () => {
             <b className="text-4xl">P</b>
           </motion.span>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={showText && { opacity: 1 }}
+            initial={animations === "on" && { opacity: 0 }}
+            animate={animations === "on" && showText && { opacity: 1 }}
             transition={{ duration: animationProps.DURATION }}
           >
             ostgreSQL
@@ -58,16 +70,21 @@ const StackDesktop = () => {
       </div>
       <div className="h-36  flex flex-col items-center justify-around">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={showText && { opacity: 1 }}
+          initial={animations === "on" && { opacity: 0 }}
+          animate={animations === "on" && showText && { opacity: 1 }}
           transition={{ duration: animationProps.DURATION }}
         >
           <SiExpress className="w-[70px] h-[70px]" />
         </motion.div>
         <div className="flex items-center text-2xl w-full">
           <motion.span
-            initial={{ marginInlineStart: animationProps.MARGIN_START }}
+            initial={
+              animations === "on" && {
+                marginInlineStart: animationProps.MARGIN_START,
+              }
+            }
             animate={
+              animations === "on" &&
               isInView && { marginInlineStart: animationProps.MARGIN_END }
             }
             transition={{ duration: animationProps.DURATION }}
@@ -75,8 +92,8 @@ const StackDesktop = () => {
             <b className="text-4xl">E</b>
           </motion.span>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={showText && { opacity: 1 }}
+            initial={animations === "on" && { opacity: 0 }}
+            animate={animations === "on" && showText && { opacity: 1 }}
             transition={{ duration: animationProps.DURATION }}
           >
             xpress
@@ -88,16 +105,21 @@ const StackDesktop = () => {
         "
       >
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={showText && { opacity: 1 }}
+          initial={animations === "on" && { opacity: 0 }}
+          animate={animations === "on" && showText && { opacity: 1 }}
           transition={{ duration: animationProps.DURATION }}
         >
           <FaReact className="w-[70px] h-[70px]" />
         </motion.div>
         <div className="flex items-center text-2xl w-full">
           <motion.span
-            initial={{ marginInlineStart: animationProps.MARGIN_START }}
+            initial={
+              animations === "on" && {
+                marginInlineStart: animationProps.MARGIN_START,
+              }
+            }
             animate={
+              animations === "on" &&
               isInView && { marginInlineStart: animationProps.MARGIN_END }
             }
             transition={{ duration: animationProps.DURATION }}
@@ -105,8 +127,8 @@ const StackDesktop = () => {
             <b className="text-4xl">R</b>
           </motion.span>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={showText && { opacity: 1 }}
+            initial={animations === "on" && { opacity: 0 }}
+            animate={animations === "on" && showText && { opacity: 1 }}
             transition={{ duration: animationProps.DURATION }}
           >
             eact
@@ -118,16 +140,21 @@ const StackDesktop = () => {
         "
       >
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={showText && { opacity: 1 }}
+          initial={animations === "on" && { opacity: 0 }}
+          animate={animations === "on" && showText && { opacity: 1 }}
           transition={{ duration: animationProps.DURATION }}
         >
           <DiNodejs className="w-[70px] h-[70px]" />
         </motion.div>
         <div className="flex items-center text-2xl w-full">
           <motion.span
-            initial={{ marginInlineStart: animationProps.MARGIN_START }}
+            initial={
+              animations === "on" && {
+                marginInlineStart: animationProps.MARGIN_START,
+              }
+            }
             animate={
+              animations === "on" &&
               isInView && { marginInlineStart: animationProps.MARGIN_END }
             }
             transition={{ duration: animationProps.DURATION }}
@@ -135,8 +162,8 @@ const StackDesktop = () => {
             <b className="text-4xl">N</b>
           </motion.span>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={showText && { opacity: 1 }}
+            initial={animations === "on" && { opacity: 0 }}
+            animate={animations === "on" && showText && { opacity: 1 }}
             transition={{ duration: animationProps.DURATION }}
           >
             odeJS
@@ -148,16 +175,21 @@ const StackDesktop = () => {
         "
       >
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={showText && { opacity: 1 }}
+          initial={animations === "on" && { opacity: 0 }}
+          animate={animations === "on" && showText && { opacity: 1 }}
           transition={{ duration: animationProps.DURATION }}
         >
           <TbBrandNextjs className="w-[70px] h-[70px]" />
         </motion.div>
         <div className="flex items-center text-2xl w-full">
           <motion.span
-            initial={{ marginInlineStart: animationProps.MARGIN_START }}
+            initial={
+              animations === "on" && {
+                marginInlineStart: animationProps.MARGIN_START,
+              }
+            }
             animate={
+              animations === "on" &&
               isInView && { marginInlineStart: animationProps.MARGIN_END }
             }
             transition={{ duration: animationProps.DURATION }}
@@ -165,8 +197,8 @@ const StackDesktop = () => {
             <b className="text-4xl">N</b>
           </motion.span>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={showText && { opacity: 1 }}
+            initial={animations === "on" && { opacity: 0 }}
+            animate={animations === "on" && showText && { opacity: 1 }}
             transition={{ duration: animationProps.DURATION }}
           >
             extJS
@@ -175,8 +207,8 @@ const StackDesktop = () => {
       </div>
       <motion.div
         className="text-bold text-6xl w-12"
-        initial={{ opacity: 0 }}
-        animate={showText && { opacity: 1 }}
+        initial={animations === "on" && { opacity: 0 }}
+        animate={animations === "on" && showText && { opacity: 1 }}
         transition={{ duration: animationProps.DURATION }}
       >
         +
@@ -184,8 +216,8 @@ const StackDesktop = () => {
       <motion.div
         className="h-36  flex flex-col items-center justify-around
         "
-        initial={{ opacity: 0 }}
-        animate={showText && { opacity: 1 }}
+        initial={animations === "on" && { opacity: 0 }}
+        animate={animations === "on" && showText && { opacity: 1 }}
         transition={{ duration: animationProps.DURATION }}
       >
         <SiTypescript className="w-[70px] h-[70px]" />
