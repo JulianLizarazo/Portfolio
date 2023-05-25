@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import Header from "@/containers/Header";
 import { AnimationsContextProvider } from "@/context/animations";
+import { ThemeContextProvider } from "@/context/theme";
 
 export function generateStaticParams() {
   return [{ locale: "en" }, { locale: "es" }];
@@ -34,10 +35,12 @@ export default async function RootLayout({
       <body className={archivo.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AnimationsContextProvider>
-            <Header lng={locale} />
-            <main className="w-full h-full bg-light-white dark:bg-dark-black text-light-blue dark:text-dark-white">
-              {children}
-            </main>
+            <ThemeContextProvider>
+              <Header lng={locale} />
+              <main className="w-full h-full bg-light-white dark:bg-dark-black text-light-blue dark:text-dark-white">
+                {children}
+              </main>
+            </ThemeContextProvider>
           </AnimationsContextProvider>
         </NextIntlClientProvider>
       </body>
