@@ -13,6 +13,7 @@
         "text": "I'm Julian Pinilla, i'm currently finishing my degree in Systems Engineering at the University of Cundinamarca in Colombia. I work as a fullstack developer with specialization in frontend development."
     },
     "skills": {
-        "stack": "Main skills" 
+        "stack": "Main skills",
+        "other": "Other skills" 
     }
 }
