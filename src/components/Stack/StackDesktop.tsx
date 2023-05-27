@@ -9,26 +9,22 @@ import { useRef, useState, useEffect } from "react";
 import { useAnimationContext } from "@/context/animations";
 
 const animationProps = {
-  MARGIN_START: "500%",
   MARGIN_END: "0px",
   DURATION: 0.7,
 };
 
 const StackDesktop = () => {
-
   const [showText, setShowText] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
   const { animations } = useAnimationContext();
   const isInView = useInView(ref, {
     margin: "-160px",
-    once: true,
   });
 
   const completeText = () => {
     setShowText(true);
   };
-
 
   return (
     <section
@@ -37,7 +33,7 @@ const StackDesktop = () => {
     >
       <div className="h-36  flex flex-col items-center justify-around">
         <motion.div
-          initial={animations === "on" && { opacity: 0 }}
+          className={animations === "on" ? "opacity-0" : "opacity-100"}
           animate={animations === "on" && showText && { opacity: 1 }}
           transition={{ duration: animationProps.DURATION }}
         >
@@ -45,11 +41,7 @@ const StackDesktop = () => {
         </motion.div>
         <div className="flex items-center text-2xl w-full">
           <motion.span
-            initial={
-              animations === "on" && {
-                marginInlineStart: animationProps.MARGIN_START,
-              }
-            }
+            className={animations === "on" ? "ml-[500%]" : "ml-0"}
             animate={
               animations === "on" &&
               isInView && { marginInlineStart: animationProps.MARGIN_END }
@@ -60,7 +52,7 @@ const StackDesktop = () => {
             <b className="text-4xl">P</b>
           </motion.span>
           <motion.p
-            initial={animations === "on" && { opacity: 0 }}
+            className={animations === "on" ? "opacity-0" : "opacity-100"}
             animate={animations === "on" && showText && { opacity: 1 }}
             transition={{ duration: animationProps.DURATION }}
           >
@@ -70,7 +62,7 @@ const StackDesktop = () => {
       </div>
       <div className="h-36  flex flex-col items-center justify-around">
         <motion.div
-          initial={animations === "on" && { opacity: 0 }}
+          className={animations === "on" ? "opacity-0" : "opacity-100"}
           animate={animations === "on" && showText && { opacity: 1 }}
           transition={{ duration: animationProps.DURATION }}
         >
@@ -78,11 +70,7 @@ const StackDesktop = () => {
         </motion.div>
         <div className="flex items-center text-2xl w-full">
           <motion.span
-            initial={
-              animations === "on" && {
-                marginInlineStart: animationProps.MARGIN_START,
-              }
-            }
+            className={animations === "on" ? "ml-[500%]" : "ml-0"}
             animate={
               animations === "on" &&
               isInView && { marginInlineStart: animationProps.MARGIN_END }
@@ -92,7 +80,7 @@ const StackDesktop = () => {
             <b className="text-4xl">E</b>
           </motion.span>
           <motion.p
-            initial={animations === "on" && { opacity: 0 }}
+            className={animations === "on" ? "opacity-0" : "opacity-100"}
             animate={animations === "on" && showText && { opacity: 1 }}
             transition={{ duration: animationProps.DURATION }}
           >
@@ -105,7 +93,7 @@ const StackDesktop = () => {
         "
       >
         <motion.div
-          initial={animations === "on" && { opacity: 0 }}
+          className={animations === "on" ? "opacity-0" : "opacity-100"}
           animate={animations === "on" && showText && { opacity: 1 }}
           transition={{ duration: animationProps.DURATION }}
         >
@@ -113,11 +101,7 @@ const StackDesktop = () => {
         </motion.div>
         <div className="flex items-center text-2xl w-full">
           <motion.span
-            initial={
-              animations === "on" && {
-                marginInlineStart: animationProps.MARGIN_START,
-              }
-            }
+            className={animations === "on" ? "ml-[500%]" : "ml-0"}
             animate={
               animations === "on" &&
               isInView && { marginInlineStart: animationProps.MARGIN_END }
@@ -127,7 +111,7 @@ const StackDesktop = () => {
             <b className="text-4xl">R</b>
           </motion.span>
           <motion.p
-            initial={animations === "on" && { opacity: 0 }}
+            className={animations === "on" ? "opacity-0" : "opacity-100"}
             animate={animations === "on" && showText && { opacity: 1 }}
             transition={{ duration: animationProps.DURATION }}
           >
@@ -140,7 +124,7 @@ const StackDesktop = () => {
         "
       >
         <motion.div
-          initial={animations === "on" && { opacity: 0 }}
+          className={animations === "on" ? "opacity-0" : "opacity-100"}
           animate={animations === "on" && showText && { opacity: 1 }}
           transition={{ duration: animationProps.DURATION }}
         >
@@ -148,11 +132,7 @@ const StackDesktop = () => {
         </motion.div>
         <div className="flex items-center text-2xl w-full">
           <motion.span
-            initial={
-              animations === "on" && {
-                marginInlineStart: animationProps.MARGIN_START,
-              }
-            }
+            className={animations === "on" ? "ml-[500%]" : "ml-0"}
             animate={
               animations === "on" &&
               isInView && { marginInlineStart: animationProps.MARGIN_END }
@@ -162,7 +142,7 @@ const StackDesktop = () => {
             <b className="text-4xl">N</b>
           </motion.span>
           <motion.p
-            initial={animations === "on" && { opacity: 0 }}
+            className={animations === "on" ? "opacity-0" : "opacity-100"}
             animate={animations === "on" && showText && { opacity: 1 }}
             transition={{ duration: animationProps.DURATION }}
           >
@@ -175,7 +155,7 @@ const StackDesktop = () => {
         "
       >
         <motion.div
-          initial={animations === "on" && { opacity: 0 }}
+          className={animations === "on" ? "opacity-0" : "opacity-100"}
           animate={animations === "on" && showText && { opacity: 1 }}
           transition={{ duration: animationProps.DURATION }}
         >
@@ -183,11 +163,7 @@ const StackDesktop = () => {
         </motion.div>
         <div className="flex items-center text-2xl w-full">
           <motion.span
-            initial={
-              animations === "on" && {
-                marginInlineStart: animationProps.MARGIN_START,
-              }
-            }
+            className={animations === "on" ? "ml-[500%]" : "ml-0"}
             animate={
               animations === "on" &&
               isInView && { marginInlineStart: animationProps.MARGIN_END }
@@ -197,7 +173,7 @@ const StackDesktop = () => {
             <b className="text-4xl">N</b>
           </motion.span>
           <motion.p
-            initial={animations === "on" && { opacity: 0 }}
+            className={animations === "on" ? "opacity-0" : "opacity-100"}
             animate={animations === "on" && showText && { opacity: 1 }}
             transition={{ duration: animationProps.DURATION }}
           >
@@ -206,17 +182,22 @@ const StackDesktop = () => {
         </div>
       </div>
       <motion.div
-        className="text-bold text-6xl w-12"
-        initial={animations === "on" && { opacity: 0 }}
+        className={
+          animations === "on"
+            ? "opacity-0 text-bold text-6xl w-12"
+            : "opacity-100 text-bold text-6xl w-12"
+        }
         animate={animations === "on" && showText && { opacity: 1 }}
         transition={{ duration: animationProps.DURATION }}
       >
         +
       </motion.div>
       <motion.div
-        className="h-36  flex flex-col items-center justify-around
-        "
-        initial={animations === "on" && { opacity: 0 }}
+        className={
+          animations === "on"
+            ? "opacity-0 h-36  flex flex-col items-center justify-around"
+            : "opacity-100 h-36  flex flex-col items-center justify-around"
+        }
         animate={animations === "on" && showText && { opacity: 1 }}
         transition={{ duration: animationProps.DURATION }}
       >

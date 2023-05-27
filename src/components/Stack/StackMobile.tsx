@@ -4,15 +4,16 @@ import { DiNodejs } from "react-icons/di";
 import { TbBrandNextjs } from "react-icons/tb";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import { useAnimationContext } from "@/context/animations";
 
 const animationProps = {
-  MARGIN_START: "350px",
   MARGIN_END: "0px",
   DURATION: 0.7,
 };
 
 const StackMobile = () => {
   const [showText, setShowText] = useState<boolean>(false);
+  const { animations } = useAnimationContext();
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, {
     margin: "-160px",
@@ -30,17 +31,17 @@ const StackMobile = () => {
     >
       <div className="flex items-center justify-center gap-4">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={showText && { opacity: 1 }}
+          className={animations === "on" ? "opacity-0" : "opacity-100"}
+          animate={animations === "on" && showText && { opacity: 1 }}
           transition={{ duration: animationProps.DURATION }}
         >
           <SiPostgresql className="w-[50px] h-[50px] " />
         </motion.div>
         <div className="flex items-center text-xl w-12">
           <motion.span
-          
-            initial={{ marginInlineStart: animationProps.MARGIN_START }}
+            className={animations === "on" ? "ml-[350px]" : "ml-0"}
             animate={
+              animations === "on" &&
               isInView && { marginInlineStart: animationProps.MARGIN_END }
             }
             transition={{ duration: animationProps.DURATION }}
@@ -49,8 +50,8 @@ const StackMobile = () => {
             <b className="text-3xl">P</b>
           </motion.span>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={showText && { opacity: 1 }}
+            className={animations === "on" ? "opacity-0" : "opacity-100"}
+            animate={animations === "on" && showText && { opacity: 1 }}
             transition={{ duration: animationProps.DURATION }}
           >
             ostgreSQL
@@ -59,16 +60,17 @@ const StackMobile = () => {
       </div>
       <div className="flex items-center justify-center gap-4">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={showText && { opacity: 1 }}
+          className={animations === "on" ? "opacity-0" : "opacity-100"}
+          animate={animations === "on" && showText && { opacity: 1 }}
           transition={{ duration: animationProps.DURATION }}
         >
           <SiExpress className="w-[50px] h-[50px] " />
         </motion.div>
         <div className="flex items-center text-xl w-12">
           <motion.span
-            initial={{ marginInlineStart: animationProps.MARGIN_START }}
+            className={animations === "on" ? "ml-[350px]" : "ml-0"}
             animate={
+              animations === "on" &&
               isInView && { marginInlineStart: animationProps.MARGIN_END }
             }
             transition={{ duration: animationProps.DURATION }}
@@ -76,8 +78,8 @@ const StackMobile = () => {
             <b className="text-3xl">E</b>
           </motion.span>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={showText && { opacity: 1 }}
+            className={animations === "on" ? "opacity-0" : "opacity-100"}
+            animate={animations === "on" && showText && { opacity: 1 }}
             transition={{ duration: animationProps.DURATION }}
           >
             xpress
@@ -89,16 +91,17 @@ const StackMobile = () => {
       "
       >
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={showText && { opacity: 1 }}
+          className={animations === "on" ? "opacity-0" : "opacity-100"}
+          animate={animations === "on" && showText && { opacity: 1 }}
           transition={{ duration: animationProps.DURATION }}
         >
           <FaReact className="w-[50px] h-[50px] " />
         </motion.div>
         <div className="flex items-center text-xl w-12">
           <motion.span
-            initial={{ marginInlineStart: animationProps.MARGIN_START }}
+            className={animations === "on" ? "ml-[350px]" : "ml-0"}
             animate={
+              animations === "on" &&
               isInView && { marginInlineStart: animationProps.MARGIN_END }
             }
             transition={{ duration: animationProps.DURATION }}
@@ -106,8 +109,8 @@ const StackMobile = () => {
             <b className="text-3xl">R</b>
           </motion.span>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={showText && { opacity: 1 }}
+            className={animations === "on" ? "opacity-0" : "opacity-100"}
+            animate={animations === "on" && showText && { opacity: 1 }}
             transition={{ duration: animationProps.DURATION }}
           >
             eact
@@ -119,16 +122,17 @@ const StackMobile = () => {
       "
       >
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={showText && { opacity: 1 }}
+          className={animations === "on" ? "opacity-0" : "opacity-100"}
+          animate={animations === "on" && showText && { opacity: 1 }}
           transition={{ duration: animationProps.DURATION }}
         >
           <DiNodejs className="w-[50px] h-[50px] " />
         </motion.div>
         <div className="flex items-center text-xl w-12">
           <motion.span
-            initial={{ marginInlineStart: animationProps.MARGIN_START }}
+            className={animations === "on" ? "ml-[350px]" : "ml-0"}
             animate={
+              animations === "on" &&
               isInView && { marginInlineStart: animationProps.MARGIN_END }
             }
             transition={{ duration: animationProps.DURATION }}
@@ -136,8 +140,8 @@ const StackMobile = () => {
             <b className="text-3xl">N</b>
           </motion.span>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={showText && { opacity: 1 }}
+            className={animations === "on" ? "opacity-0" : "opacity-100"}
+            animate={animations === "on" && showText && { opacity: 1 }}
             transition={{ duration: animationProps.DURATION }}
           >
             odeJS
@@ -149,16 +153,17 @@ const StackMobile = () => {
       "
       >
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={showText && { opacity: 1 }}
+          className={animations === "on" ? "opacity-0" : "opacity-100"}
+          animate={animations === "on" && showText && { opacity: 1 }}
           transition={{ duration: animationProps.DURATION }}
         >
           <TbBrandNextjs className="w-[50px] h-[50px] " />
         </motion.div>
         <div className="flex items-center text-xl w-12">
           <motion.span
-            initial={{ marginInlineStart: animationProps.MARGIN_START }}
+            className={animations === "on" ? "ml-[350px]" : "ml-0"}
             animate={
+              animations === "on" &&
               isInView && { marginInlineStart: animationProps.MARGIN_END }
             }
             transition={{ duration: animationProps.DURATION }}
@@ -166,8 +171,8 @@ const StackMobile = () => {
             <b className="text-3xl">N</b>
           </motion.span>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={showText && { opacity: 1 }}
+            className={animations === "on" ? "opacity-0" : "opacity-100"}
+            animate={animations === "on" && showText && { opacity: 1 }}
             transition={{ duration: animationProps.DURATION }}
           >
             extJS
@@ -175,18 +180,23 @@ const StackMobile = () => {
         </div>
       </div>
       <motion.div
-        className="text-bold text-4xl w-12"
-        initial={{ opacity: 0 }}
-        animate={showText && { opacity: 1 }}
+        className={
+          animations === "on"
+            ? "opacity-0 text-bold text-4xl w-12"
+            : "opacity-100 text-bold text-4xl w-12"
+        }
+        animate={animations === "on" && showText && { opacity: 1 }}
         transition={{ duration: animationProps.DURATION }}
       >
         +
       </motion.div>
       <motion.div
-        className="flex items-center justify-center gap-4
-      "
-        initial={{ opacity: 0 }}
-        animate={showText && { opacity: 1 }}
+        className={
+          animations === "on"
+            ? "opacity-0 flex items-center justify-center gap-4"
+            : "opacity-100 flex items-center justify-center gap-4"
+        }
+        animate={animations === "on" && showText && { opacity: 1 }}
         transition={{ duration: animationProps.DURATION }}
       >
         <SiTypescript className="w-[50px] h-[50px] " />
