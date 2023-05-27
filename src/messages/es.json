@@ -15,5 +15,9 @@
     "skills": {
         "stack": "Habilidades principales",
         "other": "Otras habilidades" 
+    },
+    "projects": {
+        "frontend": "Proyectos frontend",
+        "backend": "Proyectos backend"
     }
 }
