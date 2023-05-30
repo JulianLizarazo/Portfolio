@@ -8,7 +8,7 @@ export const useWindowSize = () => {
     setWidth(window.innerWidth);
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setWidth(window.innerWidth);
   }, [])
 

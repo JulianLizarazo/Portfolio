@@ -17,7 +17,7 @@
         "other": "Otras habilidades" 
     },
     "projects": {
-        "frontend": "Proyectos frontend",
-        "backend": "Proyectos backend"
+        "frontend": "Proyectos Frontend",
+        "backend": "Proyectos Backend"
     }
 }

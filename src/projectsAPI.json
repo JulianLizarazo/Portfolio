@@ -7,8 +7,9 @@
         "en": "MovieVerse is a website made with React, where you can search for movies of your interest, see information about them, and if you wish, add them to your favorites list"
       },
       "images": {
-        "desktop": "./assets/MovieVerseDesktop.png",
-        "mobile": "./assets/MovieVerseMobile.png"
+        "desktop": "MovieVerseDesktop",
+        "mobile": "MovieVerseMobile",
+        "alt": "MovieVerse website"
       },
       "repo": "https://github.com/JulianLizarazo/MovieVerse",
       "website": "https://movieversejl.netlify.app",
@@ -42,8 +43,9 @@
         "en": "Palaa is a website based on a video game of the same name, this was made as a university project using React (Only the frontend works, the backend is very possible that it is not working)"
       },
       "images": {
-        "desktop": "./assets/PalaaDesktop.png",
-        "mobile": "./assets/PalaaMobile.png"
+        "desktop": "PalaaDesktop",
+        "mobile": "PalaaMobile",
+        "alt": "Palaa website"
       },
       "repo": "",
       "website": "https://palaa.tk",
@@ -69,8 +71,9 @@
         "en": "This is a website that recreates a Pokedex, using the 'PokeAPI' api, which has the functionality of the Pokedex seen in the Pokemon anime, this website was made with native Javascript"
       },
       "images": {
-        "desktop": "./assets/PokedexDesktop.png",
-        "mobile": "./assets/PokedexMobile.png"
+        "desktop": "PokedexDesktop",
+        "mobile": "PokedexMobile",
+        "alt": "Pokedex website"
       },
       "repo": "https://github.com/JulianLizarazo/Pokedex",
       "website": "https://julianlizarazo.github.io/Pokedex/src/index.html",
@@ -96,55 +99,56 @@
         "en": "Math is a website where you can calculate areas and perimeters of certain figures, and also calculate some types of averages. This website was made with native Javascript"
       },
       "images": {
-        "desktop": "./assets/MathDesktop.png",
-        "mobile": "./assets/MathMobile.png"
+        "desktop": "MathDesktop",
+        "mobile": "MathMobile",
+        "alt": "Math website"
       },
       "repo": "https://github.com/JulianLizarazo/Matematicas",
       "website": "https://julianlizarazo.github.io/Matematicas/",
-      "technologies":[
+      "technologies": [
         {
-            "name": "PUG",
-            "icon": "si/SiPug"
+          "name": "PUG",
+          "icon": "si/SiPug"
         },
         {
-            "name": "Sass",
-            "icon": "fa/FaSass"
+          "name": "Sass",
+          "icon": "fa/FaSass"
         },
         {
-            "name": "Javascript",
-            "icon": "si/SiJavascript"
+          "name": "Javascript",
+          "icon": "si/SiJavascript"
         }
       ]
     }
   ],
   "backend": [
     {
-        "name": "Eternity",
-        "description": {
-            "es": "Eternity es un sitio web en el que podras crear notas públicas y notas privadas (donde se incluya información confidencial). La diferencia entre una nota pública y una privada es que en la privada no podrás previsualizar tu nota, y para acceder a ella necesitarás de una contraseña",
-            "en": "Eternity is a website where you can create public notes and private notes (where confidential information is included). The difference between a public note and a private one is that in the private one you will not be able to preview your note, and to access it you will use a password"
+      "name": "Eternity",
+      "description": {
+        "es": "Eternity es un sitio web en el que podras crear notas públicas y notas privadas (donde se incluya información confidencial). La diferencia entre una nota pública y una privada es que en la privada no podrás previsualizar tu nota, y para acceder a ella necesitarás de una contraseña",
+        "en": "Eternity is a website where you can create public notes and private notes (where confidential information is included). The difference between a public note and a private one is that in the private one you will not be able to preview your note, and to access it you will use a password"
+      },
+      "images": {
+        "desktop": "",
+        "mobile": "",
+        "alt": "Eternity website"
+      },
+      "repo": "",
+      "website": "",
+      "technologies": [
+        {
+          "name": "PostgreSQL",
+          "icon": "si/SiPostgresql"
         },
-        "images": {
-            "desktop": "",
-            "mobile": ""
+        {
+          "name": "Express",
+          "icon": "si/SiExpress"
         },
-        "repo": "",
-        "website": "",
-        "technologies": [
-            {
-                "name": "PostgreSQL",
-                "icon": "si/SiPostgresql"
-            },
-            {
-                "name": "Express",
-                "icon": "si/SiExpress"
-            },
-            {
-                "name": "Typescript",
-                "icon": "si/SiTypescript"
-            }
-        ]
-
+        {
+          "name": "Typescript",
+          "icon": "si/SiTypescript"
+        }
+      ]
     }
   ]
 }
