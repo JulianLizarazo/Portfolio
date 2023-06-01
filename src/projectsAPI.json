@@ -2,13 +2,7 @@
   "frontend": [
     {
       "name": "MovieVerse",
-      "description": {
-        "es": "MovieVerse es un sitio web hecho con React, en el que podrás buscar peliculas de tu interés, ver información sobre ellas, y si lo deseas, agregarlas a tu lista de favoritos. Para esto se usó la API de TheMovieDB",
-        "en": "MovieVerse is a website made with React, where you can search for movies of your interest, see information about them, and if you wish, add them to your favorites list"
-      },
       "images": {
-        "desktop": "MovieVerseDesktop",
-        "mobile": "MovieVerseMobile",
         "alt": "MovieVerse website"
       },
       "repo": "https://github.com/JulianLizarazo/MovieVerse",
@@ -16,35 +10,29 @@
       "technologies": [
         {
           "name": "Framer Motion",
-          "icon": "si/SiFramer"
+          "icon": "SiFramer"
         },
         {
           "name": "React",
-          "icon": "fa/FaReact"
+          "icon": "FaReact"
         },
         {
           "name": "React Router",
-          "icon": "si/SiReactrouter"
+          "icon": "SiReactrouter"
         },
         {
           "name": "Sass",
-          "icon": "fa/FaSass"
+          "icon": "FaSass"
         },
         {
           "name": "Vite",
-          "icon": "si/SiVite"
+          "icon": "SiVite"
         }
       ]
     },
     {
       "name": "Palaa",
-      "description": {
-        "es": "Palaa es un sitio web basado en un videojuego del mismo nombre, este fue hecho como proyecto universitario usando React (Solo funciona el frontend, el backend es muy posible que no esté funcionando)",
-        "en": "Palaa is a website based on a video game of the same name, this was made as a university project using React (Only the frontend works, the backend is very possible that it is not working)"
-      },
       "images": {
-        "desktop": "PalaaDesktop",
-        "mobile": "PalaaMobile",
         "alt": "Palaa website"
       },
       "repo": "",
@@ -52,27 +40,21 @@
       "technologies": [
         {
           "name": "React",
-          "icon": "fa/FaReact"
+          "icon": "FaReact"
         },
         {
           "name": "React Router",
-          "icon": "si/SiReactrouter"
+          "icon": "SiReactrouter"
         },
         {
           "name": "Sass",
-          "icon": "fa/FaSass"
+          "icon": "FaSass"
         }
       ]
     },
     {
       "name": "Pokedex",
-      "description": {
-        "es": "Este es un sitio web que recrea una Pokedex, haciendo uso de la api 'PokeAPI', el cual tiene las funcionalidades de la Pokedex vista en el anime de Pokemon, esta web se hizo con Javascript nativo",
-        "en": "This is a website that recreates a Pokedex, using the 'PokeAPI' api, which has the functionality of the Pokedex seen in the Pokemon anime, this website was made with native Javascript"
-      },
       "images": {
-        "desktop": "PokedexDesktop",
-        "mobile": "PokedexMobile",
         "alt": "Pokedex website"
       },
       "repo": "https://github.com/JulianLizarazo/Pokedex",
@@ -80,27 +62,21 @@
       "technologies": [
         {
           "name": "HTML",
-          "icon": "ai/AiFillHtml5"
+          "icon": "AiFillHtml5"
         },
         {
           "name": "CSS",
-          "icon": "di/DiCss3"
+          "icon": "DiCss3"
         },
         {
           "name": "Javascript",
-          "icon": "si/SiJavascript"
+          "icon": "SiJavascript"
         }
       ]
     },
     {
       "name": "Math",
-      "description": {
-        "es": "Math es un sitio web en el que podrás calcular áreas y perimetros de ciertas figuras, y también calcular algunos tipos de promedios. Esta web fue hecha con Javascript nativo",
-        "en": "Math is a website where you can calculate areas and perimeters of certain figures, and also calculate some types of averages. This website was made with native Javascript"
-      },
       "images": {
-        "desktop": "MathDesktop",
-        "mobile": "MathMobile",
         "alt": "Math website"
       },
       "repo": "https://github.com/JulianLizarazo/Matematicas",
@@ -108,15 +84,15 @@
       "technologies": [
         {
           "name": "PUG",
-          "icon": "si/SiPug"
+          "icon": "SiPug"
         },
         {
           "name": "Sass",
-          "icon": "fa/FaSass"
+          "icon": "FaSass"
         },
         {
           "name": "Javascript",
-          "icon": "si/SiJavascript"
+          "icon": "SiJavascript"
         }
       ]
     }
@@ -124,13 +100,7 @@
   "backend": [
     {
       "name": "Eternity",
-      "description": {
-        "es": "Eternity es un sitio web en el que podras crear notas públicas y notas privadas (donde se incluya información confidencial). La diferencia entre una nota pública y una privada es que en la privada no podrás previsualizar tu nota, y para acceder a ella necesitarás de una contraseña",
-        "en": "Eternity is a website where you can create public notes and private notes (where confidential information is included). The difference between a public note and a private one is that in the private one you will not be able to preview your note, and to access it you will use a password"
-      },
       "images": {
-        "desktop": "",
-        "mobile": "",
         "alt": "Eternity website"
       },
       "repo": "",
@@ -138,15 +108,15 @@
       "technologies": [
         {
           "name": "PostgreSQL",
-          "icon": "si/SiPostgresql"
+          "icon": "SiPostgresql"
         },
         {
           "name": "Express",
-          "icon": "si/SiExpress"
+          "icon": "SiExpress"
         },
         {
           "name": "Typescript",
-          "icon": "si/SiTypescript"
+          "icon": "SiTypescript"
         }
       ]
     }

@@ -19,5 +19,14 @@
     "projects": {
         "frontend": "Proyectos Frontend",
         "backend": "Proyectos Backend"
+    },
+    "projectsInfo": {
+        "movieverse": "MovieVerse es un sitio web hecho con React, en el que podrás buscar peliculas de tu interés, ver información sobre ellas, y si lo deseas, agregarlas a tu lista de favoritos. Para esto se usó la API de TheMovieDB",
+        "palaa": "Palaa es un sitio web basado en un videojuego del mismo nombre, este fue hecho como proyecto universitario usando React (Solo funciona el frontend, el backend es muy posible que no esté funcionando)",
+        "pokedex": "Este es un sitio web que recrea una Pokedex, haciendo uso de la api 'PokeAPI', el cual tiene las funcionalidades de la Pokedex vista en el anime de Pokemon, esta web se hizo con Javascript nativo",
+        "math": "Math es un sitio web en el que podrás calcular áreas y perimetros de ciertas figuras, y también calcular algunos tipos de promedios. Esta web fue hecha con Javascript nativo",
+        "repo": "Repositorio",
+        "website": "Sitio web",
+        "technologies": "Tecnologías"
     }
 }
