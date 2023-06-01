@@ -4,6 +4,8 @@ import ProjectImage from "./ProjectImage";
 import { AiFillGithub, AiFillEye } from "react-icons/ai";
 import { Suspense } from "react";
 import { Icon } from "./Icon";
+import { motion } from "framer-motion";
+import { useAnimationContext } from "@/context/animations";
 
 type ProjectInfoMobileProps = {
   project: IProjectsAPI;
@@ -15,14 +17,22 @@ const ProjectInfoMobile = ({
   handleShowProjectInfo,
 }: ProjectInfoMobileProps) => {
   const t = useTranslations("projectsInfo");
+  const { animations } = useAnimationContext();
   return (
-    <section
+    <motion.section
+      key="modal"
       className="w-[90%] max-w-[400px] h-[90%] fixed top-1/2 left-1/2 z-30 bg-light-gray dark:bg-dark-gray"
-      style={{ transform: "translate(-50%, -50%)" }}
+      style={
+        animations === "on"
+          ? { opacity: 0, transform: "translate(-50%, -50%)" }
+          : { opacity: 1, transform: "translate(-50%, -50%)" }
+      }
+      animate={animations === "on" && { opacity: 1 }}
+      exit={animations === "on" ? { opacity: 0 } : undefined}
     >
-      <section className="w-full h-[40%] bg-light-blue relative">
+      <section className="w-full h-[40%] bg-light-blue dark:bg-dark-white relative">
         <div
-          className="w-7 h-7 bg-light-brown text-light-blue rounded-3xl absolute top-3 right-4 flex justify-center items-center"
+          className="w-7 h-7 bg-light-brown text-light-blue dark:bg-dark-gray dark:text-dark-white rounded-3xl absolute top-3 right-4 flex justify-center items-center"
           onClick={handleShowProjectInfo}
         >
           X
@@ -43,7 +53,7 @@ const ProjectInfoMobile = ({
           <a
             href={project.repo}
             target="_blank"
-            className="w-[85%] h-12 flex items-center justify-around border rounded-sm border-light-blue "
+            className="w-[85%] h-12 flex items-center justify-around border rounded-sm border-light-blue dark:border-dark-white "
           >
             <AiFillGithub className="w-7 h-7" />
             <p className="w-20 text-sm"> {t("repo")} </p>
@@ -51,7 +61,7 @@ const ProjectInfoMobile = ({
           <a
             href={project.website}
             target="_blank"
-            className="w-[85%] h-12 flex items-center justify-around border rounded-sm border-light-blue "
+            className="w-[85%] h-12 flex items-center justify-around border rounded-sm border-light-blue dark:border-dark-white "
           >
             <AiFillEye className="w-7 h-7" />
             <p className="w-20 text-sm"> {t("website")} </p>
@@ -62,13 +72,17 @@ const ProjectInfoMobile = ({
           <div className="w-full h-[80%] flex flex-wrap items-center justify-around px-1 gap-2">
             {project.technologies.map((technologie) => (
               <Suspense fallback={<p>Cargando....</p>}>
-                <Icon key={technologie.name} nameIcon={technologie.icon} propsIcon={{ size: 30 }} />
+                <Icon
+                  key={technologie.name}
+                  nameIcon={technologie.icon}
+                  propsIcon={{ size: 30 }}
+                />
               </Suspense>
             ))}
           </div>
         </section>
       </section>
-    </section>
+    </motion.section>
   );
 };
 
