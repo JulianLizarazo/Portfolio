@@ -1,15 +1,16 @@
 import { useState } from "react";
 import ProjectImage from "@/components/ProjectImage";
 import { BsEyeFill } from "react-icons/bs";
-import ProjectInfoMobile from "@/components/ProjectInfoMobile";
+import ProjectInfoMobile from "./ProjectInfoMobile/ProjectInfoMobile";
 import type { IProjectsAPI } from "@/interfaces/ProjectsAPI";
 import { AnimatePresence } from "framer-motion";
 
-type ProjectProps = {
+
+type ProjectMobileProps = {
   project: IProjectsAPI;
 };
 
-const Project = ({ project }: ProjectProps) => {
+const ProjectMobile = ({ project }: ProjectMobileProps) => {
   const [showProjectInfo, setShowProjectInfo] = useState<boolean>(false);
 
   const handleShowProjectInfo = () => {
@@ -36,6 +37,7 @@ const Project = ({ project }: ProjectProps) => {
               project={project}
               handleShowProjectInfo={handleShowProjectInfo}
             />
+
             <div className="fixed bg-dark-black w-full h-full opacity-30 top-0 left-0 z-20"></div>
           </>
         )}
@@ -44,4 +46,4 @@ const Project = ({ project }: ProjectProps) => {
   );
 };
 
-export default Project;
+export default ProjectMobile;

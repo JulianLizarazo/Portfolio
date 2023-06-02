@@ -1,21 +1,28 @@
 "use client";
 
+import { useWindowSize } from "@/hooks/useWindowSize";
 import projects from "../projectsAPI.json";
 
-import Project from "@/components/Project";
+import ProjectMobile from "@/components/ProjectMobile";
+import ProjectDesktop from "@/components/ProjectDesktop/ProjectDesktop";
 
 type ProjectsProps = {
   title: string;
 };
 
 const Projects = ({ title }: ProjectsProps) => {
+  const { width } = useWindowSize();
   return (
     <section className="w-full flex flex-col justify-center mt-16">
       <h2 className="text-2xl font-bold text-center lg:text-4xl">{title}</h2>
       <section className="w-[80%] m-auto flex flex-wrap justify-center mt-16">
-        {projects.frontend.map((project) => (
-          <Project key={project.name} project={project} />
-        ))}
+        {projects.frontend.map((project) => {
+          return width < 1023 ? (
+            <ProjectMobile key={project.name} project={project} />
+          ) : (
+            <ProjectDesktop key={project.name} project={project} />
+          );
+        })}
       </section>
     </section>
   );
