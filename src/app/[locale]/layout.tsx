@@ -37,7 +37,7 @@ export default async function RootLayout({
           <AnimationsContextProvider>
             <ThemeContextProvider>
               <Header lng={locale} />
-              <main className="w-full h-full bg-light-white dark:bg-dark-black text-light-blue dark:text-dark-white">
+              <main className="w-full h-full pt-[56px] bg-light-white dark:bg-dark-black text-light-blue dark:text-dark-white">
                 {children}
               </main>
             </ThemeContextProvider>
