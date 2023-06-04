@@ -25,8 +25,12 @@
         "palaa": "Palaa es un sitio web basado en un videojuego del mismo nombre, este fue hecho como proyecto universitario usando React (Solo funciona el frontend, el backend es muy posible que no esté funcionando)",
         "pokedex": "Este es un sitio web que recrea una Pokedex, haciendo uso de la api 'PokeAPI', el cual tiene las funcionalidades de la Pokedex vista en el anime de Pokemon, esta web se hizo con Javascript nativo",
         "math": "Math es un sitio web en el que podrás calcular áreas y perimetros de ciertas figuras, y también calcular algunos tipos de promedios. Esta web fue hecha con Javascript nativo",
+        "eternity": "Eternity es un sitio web en el que puedes guardar notas, estas se dividen en notas 'publicas' y notas 'privadas', la diferencia radica en que en para acceder a la nota privada necesitas de una contraseña. El sitio aún está en beta",
         "repo": "Repositorio",
         "website": "Sitio web",
         "technologies": "Tecnologías"
+    },
+    "contact": {
+        "title": "Contactame"
     }
 }

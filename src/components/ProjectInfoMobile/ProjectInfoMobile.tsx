@@ -51,14 +51,16 @@ const ProjectInfoMobile = ({
       <p className="mx-3 text-justify">{t(project.name.toLowerCase())}</p>
       <section className="mt-4 h-[22%] max-h-[30%] flex flex-col items-center">
         <section className="w-full h-full flex items-center justify-around gap-5">
-          <a
-            href={project.repo}
-            target="_blank"
-            className="w-[40%] h-12 flex items-center  border rounded-sm justify-evenly  border-light-blue dark:border-dark-white "
-          >
-            <AiFillGithub className="w-7 h-7" />
-            <p className="text-sm"> {t("repo")} </p>
-          </a>
+          {project.repo !== "" && (
+            <a
+              href={project.repo}
+              target="_blank"
+              className="w-[40%] h-12 flex items-center  border rounded-sm justify-evenly  border-light-blue dark:border-dark-white "
+            >
+              <AiFillGithub className="w-7 h-7" />
+              <p className="text-sm"> {t("repo")} </p>
+            </a>
+          )}
           <a
             href={project.website}
             target="_blank"
@@ -69,7 +71,10 @@ const ProjectInfoMobile = ({
           </a>
         </section>
         <section className="w-full h-full mt-4">
-          <h3 className="text-center text-lg font-bold mb-2"> {t("technologies")} </h3>
+          <h3 className="text-center text-lg font-bold mb-2">
+            {" "}
+            {t("technologies")}{" "}
+          </h3>
           <div className="w-full h-[80%] flex flex-wrap items-center justify-around">
             {project.technologies.map((technologie) => (
               <Suspense fallback={<p>Cargando....</p>}>

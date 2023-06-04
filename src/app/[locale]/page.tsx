@@ -1,5 +1,6 @@
 "use client";
 import AboutMe from "@/containers/AboutMe";
+import Contact from "@/containers/Contact";
 import OtherSkills from "@/containers/OtherSkills";
 import Presentation from "@/containers/Presentation";
 import Projects from "@/containers/Projects";
@@ -15,7 +16,9 @@ export default function Home() {
       <AboutMe />
       <Stack />
       <OtherSkills />
-      <Projects title={t("frontend")} />
+      <Projects title={t("frontend")} area="frontend" />
+      <Projects title={t("backend")} area="backend" />
+      <Contact/>
     </>
   );
 }
