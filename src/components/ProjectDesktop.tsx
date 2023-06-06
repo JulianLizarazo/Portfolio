@@ -26,15 +26,15 @@ const ProjectDesktop = ({ project }: ProjectMobileProps) => {
     setIsHovered(false);
   };
 
-  const handleShowProjectInfo = () => {
-    setShowProjectInfo(!showProjectInfo);
-  };
   return (
     <motion.article
       className="w-[50%] flex relative cursor-pointer"
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
-      onClick={handleShowProjectInfo}
+      onClick={() => {
+        setShowProjectInfo(!showProjectInfo);
+        handleHoverEnd();
+      }}
     >
       <ProjectImage
         imageUrl={project.name}
@@ -50,15 +50,15 @@ const ProjectDesktop = ({ project }: ProjectMobileProps) => {
         <BsEyeFill className="w-1/4 h-1/4 text-dark-white" />
       </motion.div>
       <AnimatePresence>
-      {showProjectInfo && (
+        {showProjectInfo && (
           <>
             <ProjectInfoDesktop
               key="modal"
               project={project}
-              handleShowProjectInfo={handleShowProjectInfo}
+              handleShowProjectInfo={setShowProjectInfo}
             />
 
-            <div className="fixed bg-dark-black w-full h-full opacity-30 top-0 left-0 z-20"></div>
+            <div className="fixed bg-dark-black w-full h-full opacity-30 top-0 left-0  z-[5]"></div>
           </>
         )}
       </AnimatePresence>

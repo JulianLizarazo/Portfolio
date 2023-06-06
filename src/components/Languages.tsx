@@ -48,7 +48,7 @@ export const Languages = ({ lng }: LanguageProps) => {
         {!showCompleteLanguages ? (
           <li
             onClick={handleClick}
-            className="flex gap-1.5 border-2 border-solid border-light-brown rounded-md p-1 hover:bg-light-gray dark:border-dark-gray dark:hover:bg-dark-gray"
+            className="flex gap-1.5 border border-solid border-light-blue rounded-md p-1 hover:bg-light-gray dark:border-dark-white dark:hover:bg-dark-gray"
           >
             <Image
               src={lng === "es" ? COLOMBIA : EEUU}
@@ -62,7 +62,7 @@ export const Languages = ({ lng }: LanguageProps) => {
           <>
             <li
               onClick={handleClick}
-              className="flex gap-1.5 border-t-2 border-x-2 border-solid border-light-brown rounded-t-md p-1 pb-2 hover:bg-light-gray dark:border-dark-gray dark:hover:bg-dark-gray"
+              className="flex gap-1.5 border-t border-x border-solid border-light-blue rounded-t-md p-1 pb-2 hover:bg-light-gray dark:border-dark-white dark:hover:bg-dark-gray"
             >
               <Image
                 src={lng === "es" ? COLOMBIA : EEUU}
@@ -72,13 +72,13 @@ export const Languages = ({ lng }: LanguageProps) => {
               />
               <span>{lng.toUpperCase()}</span>
             </li>
-            <li className="absolute top-8 bg-light-white dark:bg-dark-black border-b-2 border-x-2 border-solid border-light-brown rounded-b-md p-1 pe-2 pt-2 hover:bg-light-gray dark:border-dark-gray dark:hover:bg-dark-gray">
+            <li className="absolute top-8 bg-light-white dark:bg-dark-black border-b border-x border-solid border-light-blue rounded-b-md p-1 pe-2 pt-2 hover:bg-light-gray dark:border-dark-white dark:hover:bg-dark-gray">
               <Link
                 href={lng === "es" ? "/en" : "/es"}
                 className="flex gap-1.5"
               >
                 <Image
-                  src={lng === "es" ?  EEUU : COLOMBIA }
+                  src={lng === "es" ? EEUU : COLOMBIA}
                   alt={
                     lng === "es" ? `${t("eeuuFlag")}` : `${t("colombiaFlag")}`
                   }

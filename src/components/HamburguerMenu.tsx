@@ -21,7 +21,7 @@ const HamburguerMenu = ({ setIsVisible }: HamburguerMenuProps) => {
       setIsVisible(false);
     }
   }, [showMenu]);
-  console.log(showMenu);
+  
   return (
     <nav className="w-6 h-6">
       {!showMenu ? (

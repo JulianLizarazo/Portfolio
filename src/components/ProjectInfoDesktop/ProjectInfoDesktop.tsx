@@ -5,12 +5,12 @@ import ProjectImage from "../ProjectImage";
 import style from "./ProjectInfoDesktop.module.css";
 import { useTranslations } from "next-intl";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
-import { Suspense } from "react";
+import { Suspense, Dispatch, SetStateAction } from "react";
 import { Icon } from "../Icon";
 
 type ProjectInfoDesktopProps = {
   project: IProjectsAPI;
-  handleShowProjectInfo: () => void;
+  handleShowProjectInfo: Dispatch<SetStateAction<boolean>>;
 };
 
 const ProjectInfoDesktop = ({
@@ -22,7 +22,7 @@ const ProjectInfoDesktop = ({
   return (
     <motion.section
       key="modal"
-      className="w-[80%] max-w-[1270px] h-[80%] max-h-[768px] fixed top-1/2 left-1/2 z-30 bg-light-gray dark:bg-dark-gray"
+      className="w-[80%] max-w-[1270px] h-[80%] max-h-[768px] fixed top-1/2 left-1/2 z-[100] bg-light-gray dark:bg-dark-gray cursor-default"
       style={
         animations === "on"
           ? { opacity: 0, transform: "translate(-50%, -50%)" }
@@ -32,8 +32,8 @@ const ProjectInfoDesktop = ({
       exit={animations === "on" ? { opacity: 0 } : undefined}
     >
       <div
-        className="w-10 h-10 text-xl  text-light-blue dark:text-dark-white  absolute top-3 right-4 flex justify-center items-center z-10"
-        onClick={handleShowProjectInfo}
+        className="w-10 h-10 rounded-3xl hover:bg-light-brown dark:hover:bg-dark-black text-xl  text-light-blue dark:text-dark-white  absolute top-3 right-4 flex justify-center items-center z-10 cursor-pointer"
+        onClick={() => handleShowProjectInfo(false)}
       >
         X
       </div>

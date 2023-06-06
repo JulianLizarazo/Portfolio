@@ -21,11 +21,7 @@ const Projects = ({ title, area }: ProjectsProps) => {
           return width < 1023 ? (
             <ProjectMobile key={project.name} project={project} />
           ) : (
-            <ProjectDesktop
-              key={project.name}
-              project={project}
-             
-            />
+            <ProjectDesktop key={project.name} project={project} />
           );
         })}
       </section>
