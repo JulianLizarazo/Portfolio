@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Languages } from "../components/Languages";
 import ThemeSwitch from "@/components/ThemeSwitch";
 import AnimationHandler from "@/components/AnimationHandler";
-import { useWindowSize } from "@/hooks/useWindowSize";
 import HamburguerMenu from "@/components/HamburguerMenu";
 import { motion } from "framer-motion";
 
@@ -13,8 +12,8 @@ type HeaderParams = {
 
 const Header = ({ lng }: HeaderParams) => {
   const [prevScrollPos, setPrevScrollPos] = useState<number>(0);
-  const [isVisible, setIsVisible] = useState(true);
-  const { width } = useWindowSize();
+  const [isVisible, setIsVisible] = useState<boolean>(true);
+  const [navOpened, setNavOpened] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,22 +31,24 @@ const Header = ({ lng }: HeaderParams) => {
   };
 
   const handleHoverEnd = () => {
-    if (window.pageYOffset > 0) {
+    if (window.pageYOffset > 0 && !navOpened) {
       setIsVisible(false);
     }
   };
 
+  console.log(navOpened)
+
   return (
     <motion.header
       className="w-full fixed flex items-center justify-evenly z-[500] bg-light-white dark:bg-dark-black"
-      animate={isVisible ? { height: "56px" } : { opacity: 0 }}
+      animate={isVisible || navOpened ? { height: "56px" } : { opacity: 0 }}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
     >
       <Languages lng={lng} />
       <ThemeSwitch />
       <AnimationHandler />
-      <HamburguerMenu /> 
+      <HamburguerMenu setIsVisible={setNavOpened} />
     </motion.header>
   );
 };

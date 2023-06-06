@@ -1,12 +1,27 @@
 "use client";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TbLetterX } from "react-icons/tb";
 import NavBar from "./NavBar";
 import { AnimatePresence } from "framer-motion";
 
-const HamburguerMenu = () => {
+type HamburguerMenuProps = {
+  setIsVisible: Dispatch<SetStateAction<boolean>>;
+};
+
+const HamburguerMenu = ({ setIsVisible }: HamburguerMenuProps) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
+
+
+
+  useEffect(() => {
+    if (showMenu) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  }, [showMenu]);
+  console.log(showMenu);
   return (
     <nav className="w-6 h-6">
       {!showMenu ? (
@@ -21,7 +36,13 @@ const HamburguerMenu = () => {
             onClick={() => setShowMenu(!showMenu)}
           />
           <AnimatePresence>
-            {showMenu && <NavBar key="navModal" showMenu={showMenu} />}
+            {showMenu && (
+              <NavBar
+                key="navModal"
+                showMenu={showMenu}
+                handleShowMenu={setShowMenu}
+              />
+            )}
           </AnimatePresence>
         </>
       )}
