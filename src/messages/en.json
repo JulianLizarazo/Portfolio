@@ -32,5 +32,14 @@
     },
     "contact": {
         "title": "Contact me"
+    },
+    "navigation":{
+        "home": "Home",
+        "aboutMe": "About me",
+        "stack": "Main skills",
+        "otherSkills": "Other skills",
+        "frontend": "Frontend projects",
+        "backend": "Backend projects",
+        "contact": "Contact me"
     }
 }

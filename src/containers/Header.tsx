@@ -47,7 +47,7 @@ const Header = ({ lng }: HeaderParams) => {
       <Languages lng={lng} />
       <ThemeSwitch />
       <AnimationHandler />
-      {width < 1024 ? <HamburguerMenu /> : <p>ola</p>}
+      <HamburguerMenu /> 
     </motion.header>
   );
 };

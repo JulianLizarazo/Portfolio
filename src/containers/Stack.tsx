@@ -9,7 +9,7 @@ const Stack = () => {
     const t = useTranslations("skills");
    
     return(
-        <section className="mt-10">
+        <section id="stack" className="mt-10">
             <h2 className="text-2xl font-bold text-center lg:text-4xl">{t("stack")}</h2>
             <p className="text-2xl font-bold text-center lg:text-4xl">(STACK)</p>
             {width < 1024 ? <StackMobile/> : <StackDesktop/>}
