@@ -11,13 +11,13 @@ const HamburguerMenu = () => {
     <nav className="w-6 h-6">
       {!showMenu ? (
         <RxHamburgerMenu
-          className="w-6 h-6 text-light-blue dark:text-dark-white"
+          className="w-6 h-6 text-light-blue dark:text-dark-white cursor-pointer"
           onClick={() => setShowMenu(!showMenu)}
         />
       ) : (
         <>
           <TbLetterX
-            className="w-6 h-6 text-light-blue dark:text-dark-white"
+            className="w-6 h-6 text-light-blue dark:text-dark-white cursor-pointer"
             onClick={() => setShowMenu(!showMenu)}
           />
           <AnimatePresence>
