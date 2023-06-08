@@ -36,7 +36,6 @@ const Header = ({ lng }: HeaderParams) => {
     }
   };
 
-  console.log(navOpened)
 
   return (
     <motion.header

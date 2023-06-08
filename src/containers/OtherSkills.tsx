@@ -28,7 +28,7 @@ const OtherSkills = () => {
       </h2>
       <motion.section
         ref={ref}
-        className="w-[70%] flex flex-wrap mt-16 justify-between items-center gap-4 lg:text-lg lg:mt-24 lg:gap-7"
+        className="w-[70%] flex flex-wrap mt-16 mb-16 justify-between items-center gap-4 lg:text-lg lg:mt-24 lg:gap-7"
         style={animations === "on" ? { opacity: 0 } : { opacity: 1 }}
         animate={animations === "on" && isInView && { opacity: 1 }}
       >
