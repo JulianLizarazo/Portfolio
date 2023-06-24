@@ -1,4 +1,3 @@
-"use client";
 import "@/app/globals.css";
 import type { NextFont } from "next/dist/compiled/@next/font";
 import { Archivo } from "next/font/google";
@@ -7,12 +6,22 @@ import { notFound } from "next/navigation";
 import Header from "@/containers/Header";
 import { AnimationsContextProvider } from "@/context/animations";
 import { ThemeContextProvider } from "@/context/theme";
+import { Metadata } from "next";
+
 
 export function generateStaticParams() {
   return [{ locale: "en" }, { locale: "es" }];
 }
 
 const archivo: NextFont = Archivo({ subsets: ["latin"], display: "swap" });
+
+export const metadata: Metadata = {
+  title: "Portfolio | Julian Pinilla",
+  description: "My web portfolio!",
+  icons: {
+    icon: "../favicon.ico"
+  }
+}
 
 export default async function RootLayout({
   children,

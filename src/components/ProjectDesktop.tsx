@@ -28,7 +28,7 @@ const ProjectDesktop = ({ project }: ProjectMobileProps) => {
 
   return (
     <motion.article
-      className="w-[50%] flex relative cursor-pointer"
+      className="w-[50%] flex relative cursor-pointer" 
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
       onClick={() => {
