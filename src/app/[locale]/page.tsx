@@ -14,10 +14,11 @@ export default function Home() {
     <>
       <Presentation />
       <AboutMe />
-      <Stack />
-      <OtherSkills />
       <Projects title={t("frontend")} area="frontend" />
       <Projects title={t("backend")} area="backend" />
+      
+      <Stack />
+      <OtherSkills />
       <Contact/>
     </>
   );

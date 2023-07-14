@@ -65,34 +65,6 @@ const NavBar = ({ showMenu, handleShowMenu }: NavBarProps) => {
         <li className="cursor-pointer">
           <Link
             className="flex items-center gap-4 hover:underline"
-            to="stack"
-            spy={true}
-            smooth={true}
-            offset={-20}
-            duration={500}
-            onClick={() => handleShowMenu(false)}
-          >
-            {t("stack")}
-            <AiOutlineArrowRight />
-          </Link>
-        </li>
-        <li className="cursor-pointer">
-          <Link
-            className="flex items-center gap-4 hover:underline"
-            to="other"
-            spy={true}
-            smooth={true}
-            offset={-20}
-            duration={500}
-            onClick={() => handleShowMenu(false)}
-          >
-            {t("otherSkills")}
-            <AiOutlineArrowRight />
-          </Link>
-        </li>
-        <li className="cursor-pointer">
-          <Link
-            className="flex items-center gap-4 hover:underline"
             to="frontend"
             spy={true}
             smooth={true}
@@ -115,6 +87,34 @@ const NavBar = ({ showMenu, handleShowMenu }: NavBarProps) => {
             onClick={() => handleShowMenu(false)}
           >
             {t("backend")}
+            <AiOutlineArrowRight />
+          </Link>
+        </li>
+        <li className="cursor-pointer">
+          <Link
+            className="flex items-center gap-4 hover:underline"
+            to="stack"
+            spy={true}
+            smooth={true}
+            offset={-20}
+            duration={500}
+            onClick={() => handleShowMenu(false)}
+          >
+            {t("stack")}
+            <AiOutlineArrowRight />
+          </Link>
+        </li>
+        <li className="cursor-pointer">
+          <Link
+            className="flex items-center gap-4 hover:underline"
+            to="other"
+            spy={true}
+            smooth={true}
+            offset={-20}
+            duration={500}
+            onClick={() => handleShowMenu(false)}
+          >
+            {t("otherSkills")}
             <AiOutlineArrowRight />
           </Link>
         </li>
